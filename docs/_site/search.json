@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "I am currently finishing up my PhD under the supervision of Bing Tie and Andrea Barbarulo at Laboratoire de Mécanique Paris-Saclay (Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS).\nI am looking for a postdoctoral position in Europe, in the field of computational mechanics, notably model reducation and/or AI (PINN, ML-ROM…).\nMy research interests are in computational mechanics, more specifically model order reduction, hyperelastic material modelling, and machine learning. e MΞDISIM team. my [CV]."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Loïc Guezou’s homepage",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
