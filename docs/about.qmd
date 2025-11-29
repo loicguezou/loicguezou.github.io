@@ -1,6 +1,6 @@
 ---
 title: Loïc Guezou
-image: avatar.jpg
+# image: avatar.jpg
 toc: false
 about:
   template: trestles
