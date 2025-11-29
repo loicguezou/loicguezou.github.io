@@ -12,11 +12,11 @@ website:
   back-to-top-navigation: true
   bread-crumbs: true
   open-graph: true
-  title: "Alexandre Daby-Seesaram"
+  title: "Loic Guezou"
   image: avatar.jpg
   favicon: avatar.jpg
-  description: "Alexandre Daby-Seesaram, PHD, personal webpage"
-  site-url: https://alexandredabyseesaram.github.io/
+  description: "Loic Guezou, PhD student, personal webpage"
+  site-url: https://loicguezou.github.io/
   navbar:
     # pinned: true
     right:
@@ -26,8 +26,8 @@ website:
         text: Research
       - href: talks.qmd
         text: Talks
-      - href: news.qmd
-        text: News
+      # - href: news.qmd
+      #   text: News
       - href: add_resources.qmd
         text: Resources
       - href: TA.qmd
@@ -37,7 +37,7 @@ website:
       - text: CV
         href: Resources/Documents/CV.pdf
         target: _blank
-  # announcement: 
+  # announcement:
   #   icon: info-circle
   #   dismissable: true
   #   content: "**Conference incoming** - We'll be [presenting our work](https://alexandredabyseesaram.github.io/talks.html) at the incoming [VPH2024 in Stuttgart](https://vph-conference.org/) "
@@ -48,14 +48,11 @@ format:
   html:
     email-obfuscation: javascript
     theme:
-      light: [flatly,style_site.scss]
-      dark: [darkly,style_site_dark.scss]
-    # mainfont: Lato 
+      light: [flatly, style_site.scss]
+      dark: [darkly, style_site_dark.scss]
+    # mainfont: Lato
     css: styles.css
     toc: true
     include-after-body:
       text: |
         <script type="application/javascript" src="custom_hal.js"></script>
-
-
-
