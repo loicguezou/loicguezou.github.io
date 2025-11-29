@@ -1,0 +1,72 @@
+---
+title: Talks (selection)
+format:
+  html:
+    page-layout: full
+---
+
+:::: {style='margin-top: 3em;'}
+::::
+
+## Incoming talks
+
+:::: {style='margin-top: 3em;'}
+::::
+
+
+
+## Past talks
+
+
+
+
+### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Conferences
+:::: {style='margin-top: 2em;'}
+::::
+
+
+::::: {.talk-card}
+### ICCB 2025 ([website](https://iccb2025.org/))
+*Roma, Italy, 8th - 10st of September 2025*
+
+**Title:** Digital Twin of Human Lungs: Towards Real-Time Simulation and Registration of Soft Organs
+
+**Authors:** [A. Daby-Seesaram](index.qmd), [K. Škardová](https://m3disim.saclay.inria.fr/people/katerina-skardova), [M. Genet](https://mgenet.github.io/)
+
+:::: {.columns}
+
+::: {.column width="80pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-solid:chalkboard" aria-label="Slides"></iconify-icon> Slides](Resources/Documents/Presentations/ICCB_2025/index.html){.button target="_blank"}
+
+:::
+
+:::
+
+::: {.column width="80pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-solid:code" aria-label="Code"></iconify-icon> Code 1](https://alexandredabyseesaram.github.io/FENNI-II-PGD-paper-demo/){.button target="_blank"}
+
+
+:::
+
+:::
+
+::: {.column width="80pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-solid:code" aria-label="Code"></iconify-icon> Code 2](https://github.com/AlexandreDabySeesaram/shape_registration){.button target="_blank"}
+
+:::
+
+:::
+
+::::
+
+:::::
+

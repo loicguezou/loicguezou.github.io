@@ -1,0 +1,89 @@
+
+
+
+/* Change background colour of selections */
+
+::selection {
+    color: #e6ecefff !important;
+    background: rgb(53, 61, 215) !important;
+  }
+  
+
+  /* Styling of "Part" slides */
+
+  
+  section.slide h1 {
+    color: white;
+  }
+  
+
+  .reveal .part-slide {
+    background-image: url("BG.svg");
+    background-size: cover;
+    background-position: center;
+    color: white; /* Optional */
+  }
+  
+  .reveal .slides section.part-slide {
+    background: rgba(23, 15, 56,0.7);
+  
+  }
+  
+  
+  
+  /* Styling of slide titles and banner */
+
+  
+  .reveal h2 {
+    background:
+      url("banner.svg") no-repeat center left / auto 100%,
+      rgb(23, 15, 56); /* fallback flat color */
+      color: white;
+      width: 100vw;
+      position: relative;
+      left: -20vw;
+      padding-left: 20vw;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      vertical-align: top;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino,
+      FreeSerif, serif ;
+      font-weight: normal;
+  }
+  
+  
+
+/* Styling of colours of bullets and custom texts or links */
+
+
+.green-bullets ul li::marker {
+  color: #43B02A;
+}
+.green-bullets ul li {
+  color: inherit; /* keeps original text color */
+}
+
+.red-bullets ul li::marker {
+  color: #CE0037;
+}
+.red-bullets ul li {
+  color: inherit; /* keeps original text color */
+}
+
+
+
+.custom-h2-links h2 a {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.important {
+  color: #CE0037; /* Text color */
+}
+
+.warning {
+  color: #FE5000; /* Text color */
+}
+
+.positive {
+  color: #43B02A; /* Text color */
+}

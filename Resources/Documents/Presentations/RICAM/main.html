@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="main_files/libs/clipboard/clipboard.min.js"></script>
+<script src="main_files/libs/quarto-html/tabby.min.js"></script>
+<script src="main_files/libs/quarto-html/popper.min.js"></script>
+<script src="main_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="main_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="main_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="main_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="main_files/libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.56">
+
+  <meta name="author" content="Alexandre Daby-Seesaram ">
+  <meta name="author" content="Katerina Skardova ">
+  <meta name="author" content="Martin Genet ">
+  <meta name="dcterms.date" content="2024-10-22">
+  <title>Hybridising standard reduced-order modelling methods with interpretable sparse neural networks for real-time patient-specific lung simulations</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="main_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="LMS.css">
+  <link href="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="main_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="HiDeNN_TD.png" class="quarto-title-block center">
+  <h1 class="title">Hybridising standard reduced-order modelling methods with interpretable sparse neural networks for real-time patient-specific lung simulations</h1>
+  <p class="subtitle">RICAM seminar</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Alexandre Daby-Seesaram <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-0002-2374-0971"><iconify-icon role="img" inline="" icon="fa-brands:orcid" aria-label="Icon orcid from fa-brands Iconify.design set." title="Icon orcid from fa-brands Iconify.design set."></iconify-icon></a></span></sup> 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:alexandre.daby-seesaram@polytechnique.edu">alexandre.daby-seesaram@polytechnique.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            LMS, École Polytechnique, Paris, France
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Katerina Skardova <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-0002-9870-3438"><iconify-icon role="img" inline="" icon="fa-brands:orcid" aria-label="Icon orcid from fa-brands Iconify.design set." title="Icon orcid from fa-brands Iconify.design set."></iconify-icon></a></span></sup> 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:katerina.skardova@polytechnique.edu">katerina.skardova@polytechnique.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            LMS, École Polytechnique, Paris, France
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Martin Genet <sup><span style="color:#a6ce39ff"><a href="https://orcid.org/0000-0003-2204-201X"><iconify-icon role="img" inline="" icon="fa-brands:orcid" aria-label="Icon orcid from fa-brands Iconify.design set." title="Icon orcid from fa-brands Iconify.design set."></iconify-icon></a></span></sup> 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:martin.genet@polytechnique.edu">martin.genet@polytechnique.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            LMS, École Polytechnique, Paris, France
+          </p>
+    </div>
+</div>
+
+  <p class="date">October 22, 2024</p>
+</section>
+<section>
+
+<section id="idiopathic-pulmonary-fibrosis" class="slide level2">
+<h2>Idiopathic Pulmonary Fibrosis</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="margin-top: 4em;">
+
+</div>
+<div class="mybox">
+<div class="mybox-header">
+<p>The role of mechanics</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>No identified <strong>bio-markers</strong> yet</li>
+<li>A vicious circle has been hypothesised <span class="citation" data-cites="liu_feedback_2010">(<a href="#/references" role="doc-biblioref" onclick="">F. Liu et al., 2010</a>)</span>
+<ul>
+<li>Fibrotic tissues are <strong>stiffer</strong></li>
+<li>Causing higher stresses</li>
+<li>Causing <strong>scarring</strong></li>
+<li>Leading to the progress of the disease</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/IPF.png" style="width:100.0%"></p>
+<figcaption>PV curves of healthy and diseased lungs, <span class="citation" data-cites="gibsonLungVolumesElasticity2001">(<a href="#/references" role="doc-biblioref" onclick="">Gibson, 2001</a>)</span></figcaption>
+</figure>
+</div>
+</div></div>
+<div class="mybox">
+<div class="mybox-header-teal">
+<p>Clinician’s perspective</p>
+</div>
+<div class="mybox-body">
+<p>Rely on mechanical analyses to better understand the disease and its progression</p>
+</div>
+</div>
+</section>
+<section id="idiopathic-pulmonary-fibrosis-1" class="slide level2">
+<h2>Idiopathic Pulmonary Fibrosis</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="Figures/Movies/lung-im.mp4" loop="true" autoplay="true" height="300" controls=""><a href="Figures/Movies/lung-im.mp4">Video</a></video></p>
+<figcaption>Inspiration &amp; expiration of diseased lungs</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="Figures/Movies/lung-geometry.mp4" loop="true" autoplay="true" height="300" controls=""><a href="Figures/Movies/lung-geometry.mp4">Video</a></video></p>
+<figcaption>Digital twin from images</figcaption>
+</figure>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Objectives</p>
+</div>
+<div style="margin-top: 0em;">
+
+</div>
+<div class="mybox-body">
+<ul>
+<li>Improved understanding of the physiological mechanisms</li>
+<li><em>In silico</em> prognostics
+<ul>
+<li>Transfer tools to the clinic</li>
+<li>Patient-specific <strong>digital twins</strong></li>
+</ul></li>
+</ul>
+<div style="margin-top: 0em;">
+
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Requirements</p>
+</div>
+<div class="mybox-body">
+<div class="fragment fade-in" data-fragment-index="1">
+<ul>
+<li><g> Mechanical model of the lung <span class="citation" data-cites="patte_quasi-static_2022">(<a href="#/references" role="doc-biblioref" onclick="">Patte et al., 2022</a>)</span></g></li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li><o> Uncertainty quantification <span class="citation" data-cites="peyraut_quantification_2024">(<a href="#/references" role="doc-biblioref" onclick="">Peyraut &amp; Genet, 2024</a>)</span></o></li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li><r> <strong>Real-time</strong> estimation of the parameters </r></li>
+</ul>
+</div>
+<div style="margin-top: 0.2em;">
+
+</div>
+</div>
+</div>
+</div></div>
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+</section>
+<section id="lung-poro-mechanics-patte_quasi-static_2022" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Lung poro-mechanics <span class="citation" data-cites="patte_quasi-static_2022">(<a href="#/references" role="doc-biblioref" onclick="">Patte et al., 2022</a>)</span></h2>
+<!-- * **Parametrised** (patient-specific) mechanical problem -->
+<!-- $$
+         \begin{cases}
+            \div \cdot \sigm  + \vect{f}\left(\para\right) = 0 \qquad & \mathrm{in} \ \Omega \\
+            \sigm \cdot \vect{n} = \vect{F}\left(\para\right)  & \text{on } \partial \Omega_{N} \\
+            \vect{u} = \vect{u}_d \qquad \qquad & \text{on } \partial \Omega_{d} \\
+            \sigm = \ftensor{C}\left(\para\right):\eps(\vect{u}) & \mathrm{in} \ \Omega
+         \end{cases}
+         \label{eq:MechPb}
+$$ -->
+<!-- ![Reference problem](Figures/Omega.svg){width=200} -->
+<div class="columns">
+<div class="column" style="width:65%;">
+<div data-id="2">
+<p><strong>Weak formulation</strong> :</p>
+<div style="margin-top: 3em;">
+
+</div>
+<p><span class="math display">\[
+         \begin{cases}
+            \int_{\Omega} \boldsymbol{\Sigma} : d_{\boldsymbol{u}}\boldsymbol{E}\left( \boldsymbol{u^*} \right) ~\mathrm{d}\Omega= W_{\text{ext}}\left(\boldsymbol{u},\boldsymbol{u^*}\right) ~\forall \boldsymbol{u^*} \in H^1_0\left(\Omega \right) \\[4mm]
+            \int_{\Omega} \left(pf + \frac{\partial \Psi \left(\boldsymbol{u},\Phi_f\right)}{\partial \Phi_s}\right) \Phi_f^* ~\mathrm{d}\Omega= 0 ~\forall \Phi_f^*
+         \end{cases}
+         \label{eq:MechPb_lung}
+\]</span></p>
+</div>
+</div><div class="column" style="width:35%;">
+<div data-id="3">
+<p><strong>Kinematics</strong>:</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{F} = \boldsymbol{1} + \boldsymbol{\nabla}\boldsymbol{u}\)</span> - deformation gradient</li>
+<li><span class="math inline">\(\boldsymbol{C} = \boldsymbol{F}^T \cdot \boldsymbol{F}\)</span> - right Cauchy-Green tensor</li>
+<li><span class="math inline">\(\boldsymbol{E} = \frac{1}{2}\left(\boldsymbol{C} -\boldsymbol{1} \right)\)</span> - Green-Lagrange tensor
+<ul>
+<li><span class="math inline">\(I_1 = \text{tr}\left(\boldsymbol{C} \right)\)</span> - first invariant of <span class="math inline">\(\boldsymbol{C}\)</span></li>
+<li><span class="math inline">\(I_2 = \frac{1}{2} \left(\text{tr}\left(\boldsymbol{C} \right)^2 - \text{tr}\left( \boldsymbol{C}^2f \right) \right)\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div></div>
+<div class="mybox">
+<div class="mybox-header">
+<p>Behaviour</p>
+</div>
+<div class="mybox-body">
+<div data-id="1">
+<ul>
+<li><span class="math inline">\(\boldsymbol{\Sigma} = \frac{\partial \Psi_s + \Psi_f}{\partial \boldsymbol{E}} = \frac{\partial \Psi_s }{\partial \boldsymbol{E}} + p_f J \boldsymbol{C}^{-1}\)</span> - The second Piola-Kirchhoff stress tensor
+<ul>
+<li><span class="math inline">\(p_f = -\frac{\partial \Psi_s}{\partial \Phi_s}\)</span> - fluid pressure</li>
+</ul></li>
+<li><span class="math inline">\(\Psi_s\left(\boldsymbol{E}, \Phi_s \right) = W_{\text{skel}} + W_{\text{bulk}}\)</span>
+<span class="math display">\[\begin{cases}
+  W_{\text{skel}} = \beta_1\left(I_1 - \text{tr}\left(I_d\right) -2 \text{ln}\left(\mathrm{det}\left(\boldsymbol{F} \right)\right)\right) + \beta_2 \left(I_2 -3 -4\text{ln}\left(\mathrm{det}\left(\boldsymbol{F} \right)\right)\right) + \alpha \left( e^{\delta\left(\mathrm{det}\left(\boldsymbol{F} \right)^2-1-2\text{ln}\left(\mathrm{det}\left(\boldsymbol{F} \right)\right) \right)} -1\right)\\
+  W_{\text{bulk}} = \kappa \left( \frac{\Phi_s}{1-\Phi_{f0}} -1 -\text{ln}\left( \frac{\Phi_s}{1-\Phi_{f0}}\right) \right)
+\end{cases}\]</span></li>
+<li><span class="math inline">\(\Phi_s\)</span> current volume fraction of solid pulled back on the reference configurations</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="simpler-mechanical-problem---surrogate-modelling" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Simpler mechanical problem - surrogate modelling</h2>
+<ul>
+<li><strong>Parametrised</strong> (patient-specific) mechanical problem</li>
+</ul>
+<!-- $$
+         \begin{cases}
+            \div \cdot \sigm  + \vect{f}\left(\para\right) = 0 \qquad & \mathrm{in} \ \Omega \\
+            \sigm \cdot \vect{n} = \vect{F}\left(\para\right)  & \text{on } \partial \Omega_{N} \\
+            \vect{u} = \vect{u}_d \qquad \qquad & \text{on } \partial \Omega_{d} \\
+            \sigm = \ftensor{C}\left(\para\right):\eps(\vect{u}) & \mathrm{in} \ \Omega
+         \end{cases}
+         \label{eq:MechPb}
+$$ -->
+<!-- ![Reference problem](Figures/Omega.svg){width=200} -->
+<div class="columns">
+<div class="column" style="width:65%;">
+<div style="margin-top: 3em;">
+
+</div>
+<div data-id="2">
+<p><span class="math display">\[
+      \boldsymbol{u} = \mathop{\mathrm{arg\,min}}_{H^1\left(\Omega \right)} \int_{\Omega} \Psi\left( \boldsymbol{E}\left(\boldsymbol{u}\left(\boldsymbol{x}, \left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right) \right) \right) ~\mathrm{d}\Omega- W_{\text{ext}}\left(\boldsymbol{x}, \left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right)
+\]</span></p>
+</div>
+</div><div class="column" style="width:35%;">
+<div data-id="3">
+<p><strong>Kinematics</strong>:</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{F} = \boldsymbol{1} + \boldsymbol{\nabla}\boldsymbol{u}\)</span> - deformation gradient</li>
+<li><span class="math inline">\(\boldsymbol{C} = \boldsymbol{F}^T \cdot \boldsymbol{F}\)</span> - right Cauchy-Green tensor</li>
+<li><span class="math inline">\(\boldsymbol{E} = \frac{1}{2}\left(\boldsymbol{C} -\boldsymbol{1} \right)\)</span> - Green-Lagrange tensor
+<ul>
+<li><span class="math inline">\(I_1 = \text{tr}\left(\boldsymbol{C} \right)\)</span> - first invariant of <span class="math inline">\(\boldsymbol{C}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div data-id="1">
+<div class="mybox">
+<div class="mybox-header">
+<p>Behaviour - Saint Venant-Kirchhoff</p>
+</div>
+<div class="mybox-body">
+<div style="margin-top: 1.2em;">
+
+</div>
+<p><span class="math inline">\(\Psi = \frac{\lambda}{2} \text{tr}\left(\boldsymbol{E}\right)^2 + \mu \boldsymbol{E}:\boldsymbol{E}\)</span></p>
+<ul>
+<li>Unstable under compression</li>
+<li><span class="math inline">\(\nu = 0.48\)</span> for quasi-incompressibility
+<ul>
+<li>Soft tissues are often modelled as incompressible materials</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Reduced-order model (ROM)</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Build a <strong>surrogate model</strong>
+<ul>
+<li>Parametrised solution</li>
+</ul></li>
+<li>No computations online</li>
+<li><strong>On the fly</strong> evaluation of the model
+<ul>
+<li>Real-time parameters estimation</li>
+</ul></li>
+</ul>
+<div style="margin-top: 0.72em;">
+
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="ii---methods" class="title-slide slide level1 center">
+<h1>II - Methods</h1>
+<p><span class="math display">\[
+\definecolor{BleuLMS}{RGB}{1, 66, 106}
+\definecolor{VioletLMS}{RGB}{77, 22, 84}
+\definecolor{TealLMS}{RGB}{0, 103, 127}
+% \definecolor{BleuLMS2}{RGB}{0, 103, 202}
+\definecolor{BleuLMS2}{RGB}{0, 169, 206}
+\definecolor{BleuLMPS}{RGB}{105, 144, 255}
+\definecolor{accentcolor}{RGB}{1, 66, 106}
+\definecolor{GreenLMS}{RGB}{0,103,127}
+\definecolor{LGreenLMS}{RGB}{67,176,42}
+\definecolor{RougeLMS}{RGB}{206,0,55}
+\]</span></p>
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+<table class="caption-top" style="width:97%;">
+<colgroup>
+<col style="width: 97%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><ol type="1">
+<li><strong>Mechanical solution interpolation</strong></li>
+</ol></td>
+</tr>
+<tr class="even">
+<td><ol start="2" type="1">
+<li><strong>Reduced-order modelling</strong></li>
+</ol></td>
+</tr>
+<tr class="odd">
+<td><ol start="3" type="1">
+<li><strong>Hybrid Neural Network Proper Generalised Decomposition</strong></li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="interpolation-of-the-solution" class="slide level2">
+<h2>Interpolation of the solution</h2>
+<p><!-- * From the continuous problem of finding the displacement $\vect{u}$ in 
+
+$$
+    \mathcal{U} = \left\{\vect{u} \; | \; \vect{u}\left(\vect{x}\right) \in \mathcal{H}^1\left(\Omega, \mathbb{R}^{\text{d}}\right) \text{, }
+    \vect{u} = \vect{u}_d \text{ on }\partial \Omega_d  \right\}  
+$$ --></p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>FEM</strong> finite admissible space</li>
+</ul>
+<p><span class="math display">\[
+    \mathcal{U}_h = \left\{\boldsymbol{u}_h  \; | \; \boldsymbol{u}_h \in \text{Span}\left( \left\{ N_i^{\Omega}\left(\boldsymbol{x} \right)\right\}_{i \in \mathopen{~[\!\![~}1,N\mathclose{~]\!\!]}} \right)^d \text{, }
+    \boldsymbol{u}_h = \boldsymbol{u}_d \text{ on }\partial \Omega_d  \right\}
+\]</span></p>
+</div><div class="column" style="width:45%;">
+<div class="fragment fade-left">
+<div class="custom-bullets-pos">
+<ul>
+<li><f>Interpretabilty</f></li>
+<li><f>Kronecker propriety</f>
+<ul>
+<li><f>Easy to prescribe Dirichlet boundary conditions</f></li>
+</ul></li>
+</ul>
+</div>
+<div class="custom-bullets-neg">
+<ul>
+<li><f>Mesh adaptation not directly embedded in the method </f></li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="fragment fade-up">
+<ul>
+<li>Physics Informed Neural Networks (<strong>PINNs</strong>)</li>
+</ul>
+<p><span class="math display">\[ \boldsymbol{u} \left(x_{0,0,0} \right) = \sum\limits_{i = 0}^C \sum\limits_{j = 0}^{N_i} \sigma \left( \sum\limits_{k = 0}^{M_{i,j}} b_{i,j}+\omega_{i,j,k}~ x_{i,j,k} \right) \]</span></p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="fragment fade-left">
+<div class="custom-bullets-pos">
+<ul>
+<li><f>All interpolation parameters are trainable </f></li>
+<li><f>Benefits from ML developments </f></li>
+</ul>
+</div>
+<style>
+f { color: #01426aff }
+</style>
+<div class="custom-bullets-neg">
+<ul>
+<li><f>Not easily interpretable</f></li>
+<li><f>Difficult to prescribe Dirichlet boundary conditions </f></li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="fragment fade-up">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>HiDeNN</strong> framework <span class="citation" data-cites="zhang_hierarchical_2021 liu_hidenn-fem_2023 park_convolution_2023">(<a href="#/references" role="doc-biblioref" onclick="">Y. Liu et al., 2023</a>; <a href="#/references" role="doc-biblioref" onclick="">Park et al., 2023</a>; <a href="#/references" role="doc-biblioref" onclick="">Zhang et al., 2021</a>)</span>
+<ul>
+<li>Best of both worlds</li>
+<li>Reproducing <strong>FEM interpolation</strong> with constrained sparse neural networks</li>
+<li><span class="math inline">\(N_i^{\Omega}\)</span> are SNN with constrained <strong>weights</strong> and <strong>biases</strong></li>
+<li>Fully <strong>interpretable</strong> parameters</li>
+<li>Continuous interpolated field that can be <strong>automatically differentiated</strong></li>
+<li>Runs on <strong>GPUs</strong></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/HiDeNN_Space_2.svg" width="400"></p>
+<figcaption>Illustration of Finite Element Neural Network Interpolation (FENNI)</figcaption>
+</figure>
+</div>
+</div></div>
+</div>
+</section>
+<section id="solving-the-mechanical-problem" class="slide level2">
+<h2>Solving the mechanical problem</h2>
+<p>Solving the mechanical problems amounts to finding the continuous displacement field <strong>minimising the potential energy</strong> <span class="math display">\[E_p\left(\boldsymbol{u}\right) = \frac{1}{2} \int_{\Omega}\boldsymbol{E} : \mathbb{C} : \boldsymbol{E} ~\mathrm{d}\Omega- \int_{\partial \Omega_N}\boldsymbol{F}\cdot \boldsymbol{u} ~\mathrm{d}A- \int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}~\mathrm{d}\Omega. \]</span></p>
+<div style="margin-top: -0.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>In practice</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Compute the loss <span class="math inline">\(\mathcal{L} := E_p\)</span></li>
+<li>Find the parameters <strong>minimising</strong> the loss
+<ul>
+<li>Rely on state-of-the-art optimizers (ADAM, <strong>LBFGS</strong>, etc.)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Degrees of freedom (Dofs)</p>
+</div>
+<div class="mybox-body">
+<!-- ::: {style="margin-top: 0em;"}
+::: -->
+<ul>
+<li>Nodal values (standard FEM Dofs)</li>
+<li>Nodal coordinates (Mesh adaptation)
+<ul>
+<li>hr-adaptivity</li>
+</ul></li>
+</ul>
+<div style="margin-top: 0.15em;">
+
+</div>
+</div>
+</div>
+</div></div>
+<div style="margin-top: -1.2em;">
+
+</div>
+<div class="fragment fade-in">
+<div class="columns">
+<div class="column" style="width:32%;">
+<div style="margin-top: 0.5em;">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="Figures/Movies/r_adaptivity.mp4" loop="true" autoplay="true" height="300" controls=""><a href="Figures/Movies/r_adaptivity.mp4">Video</a></video></p>
+<figcaption>r-adaptivity</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="Figures/Movies/RH_adaptivity.mp4" loop="true" autoplay="true" height="300" controls=""><a href="Figures/Movies/RH_adaptivity.mp4">Video</a></video></p>
+<figcaption>rh-adaptivity</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:24%;">
+<div style="margin-top: 3em;">
+
+</div>
+<p><strong>h-adaptivity</strong>: red-green refinement</p>
+<div class="fragment fade-up">
+<p><strong>technical details:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dofs (initially)</th>
+<th style="text-align: center;"><span class="math inline">\(569~438\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Training time (s) </strong></td>
+<td style="text-align: center;"><span class="math inline">\(7\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>GPU (V100)</strong></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>CPUs </strong></td>
+<td style="text-align: center;">40</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+</div>
+</section>
+<section id="results" class="slide level2">
+<h2>Results</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="cell-fig-neurom-adaptivity_vs_fixed" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-neurom-adaptivity_vs_fixed" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-neurom-adaptivity_vs_fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="main_files/figure-revealjs/fig-neurom-adaptivity_vs_fixed-output-1.svg">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neurom-adaptivity_vs_fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: maximum stress convergence
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<!-- {{< include Figures/adaptivity_vs_fixed_L2.qmd >}} -->
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/VonMises_Stress_2.png" style="width:56.0%"></p>
+<figcaption>Von mises stress (MPa)</figcaption>
+</figure>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>HR-adaptivity benefits</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Improved maximum stress accuracy</li>
+<li>Improved overall solution as well at lower cost</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-left">
+<div class="mybox">
+<div class="mybox-header">
+<p>Surrogate model</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Still just a snapshot</li>
+<li>Need to take into account the parametrisation</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="reduced-order-modelling-rom" class="slide level2">
+<h2>Reduced-order modelling (ROM)</h2>
+<p><strong>Low-rank</strong> approximation of the solution to avoid the <strong>curse of dimensionality</strong> with <span class="math inline">\(\beta\)</span> parameters</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Full-order discretised model</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li><span class="math inline">\(N\)</span> spatial shape functions
+<ul>
+<li>Span a finite spatial space of dimension <span class="math inline">\(N\)</span></li>
+</ul></li>
+<li>Requires computing <span class="math inline">\(N\times \beta\)</span> associated parametric functions</li>
+</ul>
+<div style="margin-top: 1.7em;">
+
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Reduced-order model</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li><span class="math inline">\(m \ll N\)</span> spatial modes
+<ul>
+<li>Similar to global shape functions</li>
+<li>Span a <strong>smaller space</strong></li>
+</ul></li>
+<li>Galerkin projection</li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="mybox">
+<div class="mybox-header-teal">
+<p>Finding the reduced-order basis</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li><strong>Linear Normal Modes</strong> (eigenmodes of the structure) <span class="citation" data-cites="hansteen_accuracy_1979">(<a href="#/references" role="doc-biblioref" onclick="">Hansteen &amp; Bell, 1979</a>)</span>
+<ul>
+<li>Do not account for the loading and behaviour specifics</li>
+</ul></li>
+<li><strong>Proper Orthogonal Decomposition</strong> <span class="citation" data-cites="chatterjee_introduction_2000 radermacher_comparison_2013">(<a href="#/references" role="doc-biblioref" onclick="">Chatterjee, 2000</a>; <a href="#/references" role="doc-biblioref" onclick="">Radermacher &amp; Reese, 2013</a>)</span>
+<ul>
+<li>Require wise selection of the snapshots and costly computations</li>
+</ul></li>
+<li><strong>Reduced basis method</strong> <span class="citation" data-cites="maday_reduced-basis_2002">(<a href="#/references" role="doc-biblioref" onclick="">Maday &amp; Rønquist, 2002</a>)</span> with EIM <span class="citation" data-cites="barrault_empirical_2004">(<a href="#/references" role="doc-biblioref" onclick="">Barrault et al., 2004</a>)</span>
+<ul>
+<li>Rely on prior expensive computations</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="proper-generalised-decomposition-pgd" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Proper Generalised Decomposition (PGD)</h2>
+<p>PGD: <span class="citation" data-cites="chinesta_short_2011 Ladeveze85">(<a href="#/references" role="doc-biblioref" onclick="">Chinesta et al., 2011</a>; <a href="#/references" role="doc-biblioref" onclick="">Ladevèze, 1985</a>)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Tensor decomposition</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Separation of variables</li>
+<li>Low-rank <span class="math inline">\(m\)</span></li>
+<li><span class="math inline">\(\textcolor{BleuLMPS}{\overline{\boldsymbol{u}}_i(\boldsymbol{x})}\)</span> Space modes</li>
+<li><span class="math inline">\(\textcolor{LGreenLMS}{\lambda_i^j(\mu^j)}\)</span> Parameter modes</li>
+</ul>
+<div class="r-stack">
+<div data-id="1">
+<p><span class="math display">\[\textcolor{VioletLMS}{\boldsymbol{u}}\left(\textcolor{BleuLMPS}{\boldsymbol{x}}, \textcolor{LGreenLMS}{\mu}\right) = \sum\limits_{i=0}^{m}\textcolor{BleuLMPS}{\overline{u}_i\left(x\right)}\textcolor{LGreenLMS}{\lambda_i\left(\mu\right)}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Discretised problem</strong></p>
+<div class="r-stack">
+<div data-id="2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/PGD_2D.svg" height="200"></p>
+<figcaption>2D PGD</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div data-id="3">
+<ul>
+<li>From <span class="math inline">\(N\times N_{\mu}\)</span> unknowns to <span class="math inline">\(m\times\left(N + N_{\mu}\right)\)</span></li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Historicaly space-time PGD: <span class="math inline">\(\textcolor{VioletLMS}{\boldsymbol{u}}\left(\textcolor{BleuLMPS}{\boldsymbol{x}}, \textcolor{LGreenLMS}{t}\right) = \sum\limits_{i=0}^{m}\textcolor{BleuLMPS}{\overline{u}_i\left(x\right)}\textcolor{LGreenLMS}{\lambda_i\left(t\right)}\)</span></p>
+<ul>
+<li>Elasto-(visco)plastic problems <span class="citation" data-cites="boisseNewApproachNonlinear1990">(<a href="#/references" role="doc-biblioref" onclick="">Boisse et al., 1990</a>)</span></li>
+<li><strong>Single extra-coordinate</strong></li>
+<li>Extra-parametrisation accounted for in multi-query framework
+<ul>
+<li>Relying on non-incremental solver (<strong>LATIN</strong>) <span class="citation" data-cites="neronTimespacePGDRapid2015">(<a href="#/references" role="doc-biblioref" onclick="">Néron et al., 2015</a>)</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<p><img data-src="Figures/Latin_up.svg" style="width:80.0%"></p>
+</div>
+<div class="fragment fade-in">
+<p><img data-src="Figures/Latin_fin.svg" style="width:80.0%"></p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="proper-generalised-decomposition-pgd-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Proper Generalised Decomposition (PGD)</h2>
+<p>PGD: <span class="citation" data-cites="chinesta_short_2011 Ladeveze85">(<a href="#/references" role="doc-biblioref" onclick="">Chinesta et al., 2011</a>; <a href="#/references" role="doc-biblioref" onclick="">Ladevèze, 1985</a>)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Tensor decomposition - extra-coordinates</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Separation of variables</li>
+<li>Low-rank <span class="math inline">\(m\)</span></li>
+<li><span class="math inline">\(\textcolor{BleuLMPS}{\overline{\boldsymbol{u}}_i(\boldsymbol{x})}\)</span> Space modes</li>
+<li><span class="math inline">\(\textcolor{LGreenLMS}{\lambda_i^j(\mu^j)}\)</span> Parameter modes</li>
+</ul>
+<!-- $$
+\definecolor{BleuLMS}{RGB}{1, 66, 106}
+\definecolor{accentcolor}{RGB}{1, 66, 106}
+\definecolor{GreenLMS}{RGB}{0,103,127} 
+\definecolor{LGreenLMS}{RGB}{67,176,42} 
+\definecolor{RougeLMS}{RGB}{206,0,55} 
+$$ -->
+<div class="r-stack">
+<div data-id="1">
+<p><span class="math display">\[            
+\textcolor{VioletLMS}{\boldsymbol{u}}\left(\textcolor{BleuLMPS}{\boldsymbol{x}}, \textcolor{LGreenLMS}{\left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}}\right) = \sum\limits_{i=1}^m \textcolor{BleuLMPS}{\overline{\boldsymbol{u}}_i(\boldsymbol{x})} ~\textcolor{LGreenLMS}{\prod_{j=1}^{\beta}\lambda_i^j(\mu^j)} \]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Discretised problem</strong></p>
+<div class="r-stack">
+<div data-id="2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/PGD_3D.svg" height="200"></p>
+<figcaption>3D PGD</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div data-id="3">
+<ul>
+<li>From <span class="math inline">\(N\times\prod\limits_{j=1}^{~\beta} N_{\mu}^j\)</span> unknowns to <span class="math inline">\(m\times\left(N + \sum\limits_{j=1}^{\beta} N_{\mu}^j\right)\)</span></li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="fragment fade-up">
+<ul>
+<li>Finding the tensor decomposition by <strong>minimising</strong> the <strong>energy</strong> <!-- $$
+        \left(\left\{\overline{\vect{u}}_i \right\}_{i\in \llbracket 1,m\rrbracket},\left\{\lambda_i^j \right\}_{
+          \begin{cases}
+              i\in \llbracket 1,m\rrbracket \\
+              j\in \llbracket 1,\beta \rrbracket
+          \end{cases}
+        } \right) = \argmin_{
+            \begin{cases}
+                \left(\overline{\vect{u}}_1, \left\{\overline{\vect{u}}_i \right\} \right) & \in \mathcal{U}\times \mathcal{U}_0 \\ 
+                \left\{\left\{\lambda_i^j \right\}\right\} & \in \left( \bigtimes_{j=1}^{~\beta} \mathcal{L}_2\left(\mathcal{B}_j\right) \right)^{m-1}
+            \end{cases}}  ~\underbrace{\frac{1}{\int_{\mathcal{B}} 1 \mathrm{d}\beta} \int_{\mathcal{B}}\left[E_p\left(\vect{u}\left(\vect{x},\para\right), \ftensor{C}, \vect{F}, \vect{f} \right)  \right]\mathrm{d}\beta}_{\mathcal{L}}
+            \label{eq:min_problem}
+$$ --> <span class="math display">\[
+      \left(\left\{\overline{\boldsymbol{u}}_i \right\}_{i\in \mathopen{~[\!\![~}1,m\mathclose{~]\!\!]}},\left\{\lambda_i^j \right\}_{
+        \begin{cases}
+            i\in \mathopen{~[\!\![~}1,m\mathclose{~]\!\!]}\\
+            j\in \mathopen{~[\!\![~}1,\beta \mathclose{~]\!\!]}
+        \end{cases}
+      } \right) = \mathop{\mathrm{arg\,min}}_{
+          \begin{cases}
+              \left(\overline{\boldsymbol{u}}_1, \left\{\overline{\boldsymbol{u}}_i \right\} \right) &amp; \in \mathcal{U}\times \mathcal{U}_0 \\
+              \left\{\left\{\lambda_i^j \right\}\right\} &amp; \in \left( \bigtimes_{j=1}^{~\beta} \mathcal{L}_2\left(\mathcal{B}_j\right) \right)^{m-1}
+          \end{cases}}  ~\underbrace{\int_{\mathcal{B}}\left[E_p\left(\boldsymbol{u}\left(\boldsymbol{x},\left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right), \mathbb{C}, \boldsymbol{F}, \boldsymbol{f} \right)  \right]\mathrm{d}\beta}_{\mathcal{L}}
+          \label{eq:min_problem}
+\]</span></li>
+</ul>
+</div>
+</section>
+<section id="proper-generalised-decomposition-pgd-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Proper Generalised Decomposition (PGD)</h2>
+<ul>
+<li>Building the low-rank tensor decomposition greedily <span class="citation" data-cites="Ladeveze85 nouy_priori_2010">(<a href="#/references" role="doc-biblioref" onclick="">Ladevèze, 1985</a>; <a href="#/references" role="doc-biblioref" onclick="">Nouy, 2010</a>)</span></li>
+</ul>
+<div style="margin-top: -1em;">
+
+</div>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="2">
+<div data-id="1">
+<p><span class="math display">\[
+\boldsymbol{u}\left(\boldsymbol{x}, \left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right) =  \overline{\boldsymbol{u}}(\boldsymbol{x}) ~\prod_{j=1}^{\beta}\lambda^j(\mu^j) \]</span></p>
+</div>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2">
+<p><span class="math display">\[
+\boldsymbol{u}\left(\boldsymbol{x}, \left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right) = \textcolor{RougeLMS}{\sum\limits_{i=1}^{2}} \overline{\boldsymbol{u}}_{\textcolor{RougeLMS}{i}}(\boldsymbol{x}) ~\prod_{j=1}^{\beta}\lambda_{\textcolor{RougeLMS}{i}}^j(\mu^j) \]</span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<div data-id="2">
+<p><span class="math display">\[
+\boldsymbol{u}\left(\boldsymbol{x}, \left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right) = \sum\limits_{i=1}^{\textcolor{RougeLMS}{m}} \overline{\boldsymbol{u}}_i(\boldsymbol{x}) ~\prod_{j=1}^{\beta}\lambda_i^j(\mu^j) \]</span></p>
+</div>
+</div>
+</div>
+<style>
+.add-space{
+padding-right: 10%;
+}
+</style>
+<div style="margin-top: -1em;">
+
+</div>
+<div class="columns">
+<div class="column add-space" style="width:40%;">
+<p><strong>Greedy algorithm</strong></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<ol type="1">
+<li>Start with a single mode</li>
+<li>Minimise the loss until stagnation</li>
+</ol>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<ol start="3" type="1">
+<li>Add a new mode</li>
+<li>If loss decreases, continue training</li>
+</ol>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<ol start="5" type="1">
+<li>Else stop and return the converged model</li>
+</ol>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in" data-fragment-index="4">
+<div class="mybox">
+<div class="mybox-header">
+<p>The PGD is</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>An <em>a priori</em> ROM techniques
+<ul>
+<li>Building the model <strong>from scratch</strong> on the fly</li>
+</ul></li>
+<li>No full-order computations</li>
+<li>Reduced-order basis tailored to the specifics of the problem <span class="citation" data-cites="DabyHybrid">(<a href="#/references" role="doc-biblioref" onclick="">Daby-Seesaram et al., 2023</a>)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment fade-in" data-fragment-index="5">
+<div class="mybox">
+<div class="mybox-header">
+<p>Note</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Training of the full tensor decomposition, not only the <span class="math inline">\(m\)</span>-th mode</li>
+<li>Actual <strong>minimisation</strong> implementation of the PGD</li>
+<li>No need to solve a new problem for any new parameter
+<ul>
+<li>The online stage is a <strong>simple evaluation</strong> of the tensor decomposition</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="neural-network-pgd" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Neural Network PGD</h2>
+<p>Graphical implementation of Neural Network PGD</p>
+<div class="r-stack">
+<div data-id="2">
+<p><span class="math display">\[            \boldsymbol{u}\left(\textcolor{BleuLMPS}{\boldsymbol{x}}, \textcolor{LGreenLMS}{\left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}}\right) = \sum\limits_{i=1}^m \textcolor{BleuLMPS}{\overline{\boldsymbol{u}}_i(\boldsymbol{x})} ~\textcolor{LGreenLMS}{\prod_{j=1}^{\beta}\lambda_i^j(\mu^j)} \]</span></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Interpretable NN-PGD</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>No black box
+<ul>
+<li>Fully interpretable implementation</li>
+<li>Great transfer learning capabilities</li>
+</ul></li>
+<li>Straightforward implementation
+<ul>
+<li>Benefiting from current ML developments</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<ul>
+<li>Straightforward definition of the physical loss using auto-differentiation</li>
+</ul>
+<div id="13e56009" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb1-1" class="hljs-ln-code"><a href=""></a><span class="kw">def</span> Loss(model,x,detJ,mu):</span>
+<span id="cb1-2" class="hljs-ln-code"><a href=""></a>  </span>
+<span id="cb1-3" class="hljs-ln-code"><a href=""></a>    u <span class="op">=</span> model.space_mode(x)</span>
+<span id="cb1-4" class="hljs-ln-code"><a href=""></a>    eps <span class="op">=</span> torch.autograd.grad(u, x, grad_outputs<span class="op">=</span>torch.ones_like(u))</span>
+<span id="cb1-5" class="hljs-ln-code"><a href=""></a>    lmbda <span class="op">=</span> model.parameter_mode(mu)</span>
+<span id="cb1-6" class="hljs-ln-code"><a href=""></a>    W_int <span class="op">=</span> torch.einsum(<span class="st">'ij,ejm,eil,em,mp...,lp...,p-&gt;'</span>,C,eps,eps,detJ,lmbda,lmbda, mu)</span>
+<span id="cb1-7" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb1-8" class="hljs-ln-code"><a href=""></a>    <span class="cf">return</span> <span class="fl">0.5</span><span class="op">*</span>W_int<span class="op">/</span>mu.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/NN_PGD.svg" height="400"></p>
+<figcaption>NN-PGD</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="summary-of-the-framework" class="slide level2">
+<h2>Summary of the framework</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="Figures/Movies/FENNI_PGD.mp4" style="width:100.0%" loop="true" autoplay="true" controls=""><a href="Figures/Movies/FENNI_PGD.mp4">Video</a></video></p>
+<figcaption>FENNI-PGD</figcaption>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="iii---preliminary-results" class="title-slide slide level1 center">
+<h1>III - Preliminary results</h1>
+<table class="caption-top" style="width:67%;">
+<colgroup>
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><ol type="1">
+<li><strong>Surrogate model in use</strong></li>
+</ol></td>
+</tr>
+<tr class="even">
+<td><ol start="2" type="1">
+<li><strong>Training and convergence proprieties</strong></li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hybridising-rom-with-fenni" class="slide level2">
+<h2>Hybridising ROM with FENNI</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<iframe src="https://fenni-pgd-aldabyse-d62c0089e00d70057d8fae6bbaedf6cf1d181c44edf5.gitlabpages.inria.fr/index.html" title="NN-PGD's demo" width="100%" height="600">
+</iframe>
+</div><div class="column" style="width:40%;">
+<div style="margin-top: 2em;">
+
+</div>
+<ul>
+<li>Open-source code</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href=""></a>pip install NeuROM-Py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="https://alexandredabyseesaram.github.io/Resources/Images/NeuROM_ter.svg" style="width:60.0%" alt="image"> <a href="https://doi.org/10.5281/zenodo.13772741"><img data-src="https://zenodo.org/badge/DOI/10.5281/zenodo.13772741.svg" alt="DOI"></a> <a href="https://github.com/alexandredabyseesaram/neurom"><img data-src="https://img.shields.io/github/license/alexandredabyseesaram/neurom.png" alt="GitHub license"></a> <a href="https://pypi.org/project/NeuROM-Py/"><img data-src="https://img.shields.io/pypi/dm/NeuROM-Py.svg?label=PyPI%20downloads" alt="PyPI Downloads"></a></p>
+<ul>
+<li>All the figures of the papers are in Jupyter’s books
+<ul>
+<li>Greater reproductibility</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="stiffness-and-external-forces-parametrisation" class="slide level2">
+<h2>Stiffness and external forces parametrisation</h2>
+<p>Illustration of the surrogate model in use</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/2D_example.svg"></p>
+<figcaption>Mechanical problem 2D</figcaption>
+</figure>
+</div>
+<div class="mybox">
+<div class="mybox-header">
+<p>Parameters</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Parametrised stiffness <span class="math inline">\(E\)</span></li>
+<li>Parametrised external force <span class="math inline">\(\boldsymbol{f} =  \begin{bmatrix}
+         ~ \rho g \sin\left( \theta \right) \\
+         -\rho g \cos\left( \theta \right)
+       \end{bmatrix}\)</span></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center" style="left: 70px; height: 394px; ">
+<figure>
+<p><video data-src="Figures/Movies/BiSliders_2D_snappy.mov" class="absolute" loop="true" autoplay="true" controls=""><a href="Figures/Movies/BiSliders_2D_snappy.mov">Video</a></video></p>
+<figcaption>NeuROM</figcaption>
+</figure>
+</div>
+<div class="mybox">
+<div class="mybox-header">
+<p>NN-PGD</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Immediate evaluation of the surrogate model</li>
+<li>Straightforward differentiation capabilities regarding the input parameters</li>
+</ul>
+<div style="margin-top: 0.15em;">
+
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="convergence-of-the-greedy-algorithm" class="slide level2">
+<h2>Convergence of the greedy algorithm</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="cell-Greedyconvergence" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="greedyconvergence" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="main_files/figure-revealjs/greedyconvergence-output-1.svg"></p>
+<figcaption>maximum stress convergence</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="cell-LossDecay" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="lossdecay" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="main_files/figure-revealjs/lossdecay-output-1.svg"></p>
+<figcaption>maximum stress convergence</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="mybox">
+<div class="mybox-header">
+<p>Construction of the ROB</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>New modes are added when the loss’s decay cancels out</li>
+<li>Adding a new mode gives extra latitude to improve predictivity</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="accuracy-with-regards-to-fem-solutions" class="slide level2">
+<h2>Accuracy with regards to FEM solutions</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Solution</th>
+<th>Error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="Figures/Fig_pyvista_a_svg.svg" style="width:100.0%" alt="Configuration 1: ( E = 3.8 ^{-3} ) MPa, ( = 241^)"></td>
+<td><img data-src="Figures/Fig_pyvista_error_a_svg.svg" style="width:100.0%" alt="Configuration 1 Error: ( E = 3.8 ^{-3} ) MPa, ( = 241^)"></td>
+</tr>
+<tr class="even">
+<td><img data-src="Figures/Fig_pyvista_b_svg.svg" style="width:100.0%" alt="Configuration 2: ( E = 3.1 ^{-3} ) MPa, ( = 0^)"></td>
+<td><img data-src="Figures/Fig_pyvista_error_b_svg.svg" style="width:100.0%" alt="Configuration 2 Error: ( E = 3.1 ^{-3} ) MPa, ( = 0^)"></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:35%;">
+<div style="margin-top: 8em;">
+
+</div>
+<div class="cell">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(E\)</span> (kPa)</th>
+<th><span class="math inline">\(\theta\)</span> (rad)</th>
+<th>Relative error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3.80</td>
+<td>1.57</td>
+<td><span class="math inline">\(1.12 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="even">
+<td>3.80</td>
+<td>4.21</td>
+<td><span class="math inline">\(8.72 \times 10^{-4}\)</span></td>
+</tr>
+<tr class="odd">
+<td>3.14</td>
+<td>0</td>
+<td><span class="math inline">\(1.50 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="even">
+<td>4.09</td>
+<td>3.70</td>
+<td><span class="math inline">\(8.61 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="odd">
+<td>4.09</td>
+<td>3.13</td>
+<td><span class="math inline">\(9.32 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="even">
+<td>4.62</td>
+<td>0.82</td>
+<td><span class="math inline">\(2.72 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="odd">
+<td>5.01</td>
+<td>2.26</td>
+<td><span class="math inline">\(5.35 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="even">
+<td>6.75</td>
+<td>5.45</td>
+<td><span class="math inline">\(1.23 \times 10^{-3}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+</section>
+<section id="multi-level-training" class="slide level2">
+<h2>Multi-level training</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/Inkscape_Loss_2D_Bi_multi_level_standalone.svg" width="500"></p>
+<figcaption>Multi-level training convergence</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:35%;">
+<div style="margin-top: 4em;">
+
+</div>
+<div class="mybox">
+<div class="mybox-header">
+<p>Strategy</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>The <strong>interpretability</strong> of the NN allows
+<ul>
+<li>Great <strong>transfer learning</strong> capabilities
+<ul>
+<li>Start with <strong>coarse</strong> (cheap) training</li>
+<li>Followed by <strong>fine tuning</strong>, refining all modes</li>
+</ul></li>
+</ul></li>
+<li>Extends the idea put forward by <span class="citation" data-cites="giacoma_toward_2015">(<a href="#/references" role="doc-biblioref" onclick="">Giacoma et al., 2015</a>)</span></li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="mybox">
+<div class="mybox-header-teal">
+<p>Note</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>The structure of the <strong>Tensor decomposition</strong> is kept throughout the multi-level training</li>
+<li>Last mode of each level is irrelevant by construction
+<ul>
+<li>It is removed before passing onto the next refinement level</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="heterogeneous-stiffness" class="slide level2">
+<h2>Heterogeneous stiffness</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Bi-stiffness structure with unknown
+<ul>
+<li>Stiffness jump <span class="math inline">\(\Delta E\)</span></li>
+<li>Jump position <span class="math inline">\(\alpha\)</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Towards the parametrisation of the disease’s progression
+<ul>
+<li>Can be adapted to different stages of the diseases</li>
+<li>Different physiological initial stiffness</li>
+</ul></li>
+</ul>
+</div></div>
+<div style="margin-top: 1.5em;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="margin-top: -3em;">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/2D_example_BiStiffness.svg" width="400"></p>
+<figcaption>Bi-stiffness NN-PGD parametrisation</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="margin-top: 1.5em;">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/Fig_pyvista_SV_b_svg.svg" style="width:100.0%"></p>
+<figcaption>Bi-stiffness NN-PGD parametrisation</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="heterogeneous-stiffness-1" class="slide level2">
+<h2>Heterogeneous stiffness</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="margin-top: -1em;">
+
+</div>
+<!-- {{< include Figures/neurom_convergence_bistiffness.qmd >}}
+{{< include Figures/neurom_convergence_decay_bistiffness.qmd >}} -->
+<div id="cell-Greedyconvergence-SV" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div id="greedyconvergence-sv" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="main_files/figure-revealjs/greedyconvergence-sv-output-1.svg"></p>
+<figcaption>Convergence and ROB evolution</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div style="margin-top: -1em;">
+
+</div>
+<div id="cell-LossDecay-SV" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="lossdecay-sv" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="main_files/figure-revealjs/lossdecay-sv-output-1.svg"></p>
+<figcaption>Loss decay and ROB evolution</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="margin-top: 7em;">
+
+</div>
+<div class="mybox">
+<div class="mybox-header">
+<p>Convergence process</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Larger Kolmogorov n-with’s example</li>
+<li>Similar behaviour in constructing the reduced-order basis
+<ul>
+<li>Adding a mode leads to a recovery in loss decay</li>
+<li>This recovery decreases until global stagnation</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div></div>
+</section>
+<section id="curse-of-dimensionality-in-computing-the-loss" class="slide level2">
+<h2>Curse of dimensionality in computing the loss</h2>
+<ul>
+<li><p>Computing the non-linear loss using <strong>einsum</strong> relies on the tensor decomposition and <strong>broadcasting</strong> to remain efficient</p></li>
+<li><p>Although the displacement is represented through a tensor decomposition <span class="math inline">\(\boldsymbol{u}\left(\boldsymbol{x}, \left\{\mu_i\right\}_{i \in \mathopen{~[\!\![~}1, \beta  \mathclose{~]\!\!]}}\right) = \boldsymbol{\overline{u}}_i \prod_{j=1}^{\beta}\lambda_i^j(\mu^j)\)</span>, some <strong>non-linear mapping </strong>of that function cannot be easily computed on the independent modes but requires building the <strong>full-order solution tensor</strong> which leads to prohibitive training costs.</p></li>
+</ul>
+<div class="mybox">
+<div class="mybox-header">
+<p>More physically sound behaviour laws</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Incompressible Neo-Hookean elastic behaviour: Improve the elastic behaviour <span class="math display">\[
+\begin{cases}
+\Psi = C_1(\text{tr}\left(\boldsymbol{C}-\boldsymbol{1}\right)) + f\left(\text{ln}\left(\text{det}\left( \boldsymbol{F}\right) \right) \right)\\[2mm]
+\left(\text{det}\boldsymbol{F} - 1\right)^2 = 0
+\end{cases}
+\]</span></li>
+</ul>
+</div>
+</div>
+<div class="mybox">
+<div class="mybox-header">
+<p>Sparse sampling of the hypercube</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>One idea might be to look at <strong>sparse sampling</strong> of the parameters sets over which the loss function is computed, using a (greedy) <strong>LHS</strong> in the parametric space for instance instead of computing the integral of the potential energy over the full parametric hypercube
+<ul>
+<li>Similar idea than in <span class="citation" data-cites="lu_adaptive_2018">(<a href="#/references" role="doc-biblioref" onclick="">Lu et al., 2018</a>)</span> but applied on <strong>PDEs</strong> and not data compression</li>
+</ul></li>
+<li>The underlying idea being that the solution interpolation being <strong>constrained</strong> to be <strong>low-rank</strong> by the TD, such sparse training might suffice</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Conclusion</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Robust and straightforward general implementation of a NN-PGD
+<ul>
+<li>Interpretable</li>
+<li>Benefits from all recent developments in machine learning</li>
+</ul></li>
+<li>Surrogate modelling of parametrised PDE solution
+<ul>
+<li>Promising results on simple toy case</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Perspectives for patient-specific applications</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Implementation of the poro-mechanics lung model <span class="citation" data-cites="patte_quasi-static_2022">(<a href="#/references" role="doc-biblioref" onclick="">Patte et al., 2022</a>)</span></li>
+<li>Parametrisation of the segmented geometries
+<ul>
+<li>Variational encoder to reduce the segmentation’s parametrisation’s dimensionnality</li>
+</ul></li>
+<li>Application to real-time lung parameters estimation</li>
+<li>Error quantification on the estimated parameters</li>
+</ul>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Technical perspectives</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>3D implementation</li>
+<li>Geometry based h refinement</li>
+<li>Do not hesitate to check the <a href="https://github.com/AlexandreDabySeesaram?tab=repositories"><strong>Github page</strong></a></li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="margin-top: 1em;">
+
+</div>
+<div style="margin-left: 14%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img data-src="Figures/QR_code.svg"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://alexandredabyseesaram.github.io/">Github page</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-barrault_empirical_2004" class="csl-entry" role="listitem">
+Barrault, M., Maday, Y., Nguyen, N. C., &amp; Patera, A. T. (2004). An <span>“empirical interpolation”</span> method: Application to efficient reduced-basis discretization of partial differential equations. <em>Comptes Rendus Mathematique</em>, <em>339</em>(9), 667–672. <a href="https://doi.org/10.1016/j.crma.2004.08.006">https://doi.org/10.1016/j.crma.2004.08.006</a>
+</div>
+<div id="ref-boisseNewApproachNonlinear1990" class="csl-entry" role="listitem">
+Boisse, Ph., Bussy, P., &amp; Ladeveze, P. (1990). A new approach in non-linear mechanics: <span>The</span> large time increment method. <em>International Journal for Numerical Methods in Engineering</em>, <em>29</em>(3), 647–663. <a href="https://doi.org/10.1002/nme.1620290312">https://doi.org/10.1002/nme.1620290312</a>
+</div>
+<div id="ref-chatterjee_introduction_2000" class="csl-entry" role="listitem">
+Chatterjee, A. (2000). An introduction to the proper orthogonal decomposition. <em>Current Science</em>, <em>78</em>(7), 808–817. <a href="https://www.jstor.org/stable/24103957">https://www.jstor.org/stable/24103957</a>
+</div>
+<div id="ref-chinesta_short_2011" class="csl-entry" role="listitem">
+Chinesta, F., Ladeveze, P., &amp; Cueto, E. (2011). A <span>Short</span> <span>Review</span> on <span>Model</span> <span>Order</span> <span>Reduction</span> <span>Based</span> on <span>Proper</span> <span>Generalized</span> <span>Decomposition</span>. <em>Archives of Computational Methods in Engineering</em>, <em>18</em>(4), 395–404. <a href="https://doi.org/10.1007/s11831-011-9064-7">https://doi.org/10.1007/s11831-011-9064-7</a>
+</div>
+<div id="ref-DabyHybrid" class="csl-entry" role="listitem">
+Daby-Seesaram, A., Fau, A., Charbonnel, P.-É., &amp; Néron, D. (2023). A hybrid frequency-temporal reduced-order method for nonlinear dynamics. <em>Nonlinear Dynamics</em>, <em>111</em>(15), 13669–13689. <a href="https://doi.org/10.1007/s11071-023-08513-8">https://doi.org/10.1007/s11071-023-08513-8</a>
+</div>
+<div id="ref-giacoma_toward_2015" class="csl-entry" role="listitem">
+Giacoma, A., Dureisseix, D., Gravouil, A., &amp; Rochette, M. (2015). Toward an optimal a priori reduced basis strategy for frictional contact problems with <span>LATIN</span> solver. <em>Computer Methods in Applied Mechanics and Engineering</em>, <em>283</em>, 1357–1381. <a href="https://doi.org/10.1016/j.cma.2014.09.005">https://doi.org/10.1016/j.cma.2014.09.005</a>
+</div>
+<div id="ref-gibsonLungVolumesElasticity2001" class="csl-entry" role="listitem">
+Gibson, G. J. (2001). Lung volumes and elasticity. <em>Clinics in Chest Medicine</em>, <em>22</em>(4), 623–635, vii. <a href="https://doi.org/10.1016/s0272-5231(05)70056-3">https://doi.org/10.1016/s0272-5231(05)70056-3</a>
+</div>
+<div id="ref-hansteen_accuracy_1979" class="csl-entry" role="listitem">
+Hansteen, O. E., &amp; Bell, K. (1979). On the accuracy of mode superposition analysis in structural dynamics. <em>Earthquake Engineering &amp; Structural Dynamics</em>, <em>7</em>(5), 405–411. <a href="https://doi.org/10.1002/eqe.4290070502">https://doi.org/10.1002/eqe.4290070502</a>
+</div>
+<div id="ref-Ladeveze85" class="csl-entry" role="listitem">
+Ladevèze, P. (1985). Sur une famille d’algorithmes en mécanique des structures. <em>Comptes-Rendus Des Séances de l’Acad<span>é</span>mie Des Sciences. Série 2, Mécanique, Physique, Chimie, Sciences de l’univers, Sciences de La Terre</em>, <em>300</em>(2).
+</div>
+<div id="ref-liu_feedback_2010" class="csl-entry" role="listitem">
+Liu, F., Mih, J. D., Shea, B. S., Kho, A. T., Sharif, A. S., Tager, A. M., &amp; Tschumperlin, D. J. (2010). Feedback amplification of fibrosis through matrix stiffening and <span>COX</span>-2 suppression. <em>Journal of Cell Biology</em>, <em>190</em>(4), 693–706. <a href="https://doi.org/10.1083/jcb.201004082">https://doi.org/10.1083/jcb.201004082</a>
+</div>
+<div id="ref-liu_hidenn-fem_2023" class="csl-entry" role="listitem">
+Liu, Y., Park, C., Lu, Y., Mojumder, S., Liu, W. K., &amp; Qian, D. (2023). <span>HiDeNN</span>-<span>FEM</span>: A seamless machine learning approach to nonlinear finite element analysis. <em>Computational Mechanics</em>, <em>72</em>(1), 173–194. <a href="https://doi.org/10.1007/s00466-023-02293-z">https://doi.org/10.1007/s00466-023-02293-z</a>
+</div>
+<div id="ref-lu_adaptive_2018" class="csl-entry" role="listitem">
+Lu, Y., Blal, N., &amp; Gravouil, A. (2018). Adaptive sparse grid based <span>HOPGD</span>: <span>Toward</span> a nonintrusive strategy for constructing space-time welding computational vademecum. <em>International Journal for Numerical Methods in Engineering</em>, <em>114</em>(13), 1438–1461. <a href="https://doi.org/10.1002/nme.5793">https://doi.org/10.1002/nme.5793</a>
+</div>
+<div id="ref-maday_reduced-basis_2002" class="csl-entry" role="listitem">
+Maday, Y., &amp; Rønquist, E. M. (2002). A <span>Reduced</span>-<span>Basis</span> <span>Element</span> <span>Method</span>. <em>Journal of Scientific Computing</em>, <em>17</em>(1), 447–459. <a href="https://doi.org/10.1023/A:1015197908587">https://doi.org/10.1023/A:1015197908587</a>
+</div>
+<div id="ref-neronTimespacePGDRapid2015" class="csl-entry" role="listitem">
+Néron, D., Boucard, P.-A., &amp; Relun, N. (2015). Time-space <span>PGD</span> for the rapid solution of <span>3D</span> nonlinear parametrized problems in the many-query context: <span>PGD FOR THE RAPID SOLUTION OF NONLINEAR PARAMETRIZED PROBLEMS</span>. <em>International Journal for Numerical Methods in Engineering</em>, <em>103</em>(4), 275–292. <a href="https://doi.org/10.1002/nme.4893">https://doi.org/10.1002/nme.4893</a>
+</div>
+<div id="ref-nouy_priori_2010" class="csl-entry" role="listitem">
+Nouy, A. (2010). A priori model reduction through <span>Proper</span> <span>Generalized</span> <span>Decomposition</span> for solving time-dependent partial differential equations. <em>Computer Methods in Applied Mechanics and Engineering</em>, <em>199</em>(23-24), 1603–1626. <a href="https://doi.org/10.1016/j.cma.2010.01.009">https://doi.org/10.1016/j.cma.2010.01.009</a>
+</div>
+<div id="ref-park_convolution_2023" class="csl-entry" role="listitem">
+Park, C., Lu, Y., Saha, S., Xue, T., Guo, J., Mojumder, S., Apley, D. W., Wagner, G. J., &amp; Liu, W. K. (2023). Convolution hierarchical deep-learning neural network (<span>C</span>-<span>HiDeNN</span>) with graphics processing unit (<span>GPU</span>) acceleration. <em>Computational Mechanics</em>, <em>72</em>(2), 383–409. <a href="https://doi.org/10.1007/s00466-023-02329-4">https://doi.org/10.1007/s00466-023-02329-4</a>
+</div>
+<div id="ref-patte_quasi-static_2022" class="csl-entry" role="listitem">
+Patte, C., Genet, M., &amp; Chapelle, D. (2022). A quasi-static poromechanical model of the lungs. <em>Biomechanics and Modeling in Mechanobiology</em>, <em>21</em>(2), 527–551. <a href="https://doi.org/10.1007/s10237-021-01547-0">https://doi.org/10.1007/s10237-021-01547-0</a>
+</div>
+<div id="ref-peyraut_quantification_2024" class="csl-entry" role="listitem">
+Peyraut, A., &amp; Genet, M. (2024, May). Quantification d’incertitudes pour la modélisation pulmonaire personnalisée. <em>16ème <span>Colloque</span> <span>National</span> En <span>Calcul</span> de <span>Structures</span></em>. <a href="https://hal.science/hal-04611023">https://hal.science/hal-04611023</a>
+</div>
+<div id="ref-radermacher_comparison_2013" class="csl-entry" role="listitem">
+Radermacher, A., &amp; Reese, S. (2013). A comparison of projection-based model reduction concepts in the context of nonlinear biomechanics. <em>Archive of Applied Mechanics</em>, <em>83</em>(8), 1193–1213. <a href="https://doi.org/10.1007/s00419-013-0742-9">https://doi.org/10.1007/s00419-013-0742-9</a>
+</div>
+<div id="ref-zhang_hierarchical_2021" class="csl-entry" role="listitem">
+Zhang, L., Cheng, L., Li, H., Gao, J., Yu, C., Domel, R., Yang, Y., Tang, S., &amp; Liu, W. K. (2021). Hierarchical deep-learning neural networks: Finite elements and beyond. <em>Computational Mechanics</em>, <em>67</em>(1), 207–230. <a href="https://doi.org/10.1007/s00466-020-01928-9">https://doi.org/10.1007/s00466-020-01928-9</a>
+</div>
+</div>
+</section>
+<section id="appendix---orthonormalisation-of-the-rob" class="slide level2" data-visibility="uncounted">
+<h2>Appendix - Orthonormalisation of the ROB</h2>
+<ul>
+<li>To ensure orthonormality of the RON, a Gramm-Schmidt like algorithm can be performed</li>
+</ul>
+<p><span class="math display">\[
+        \boldsymbol{u}_{m+1} = \sum_{i=1}^{m} \underbrace{(\lambda_i + \lambda_{m+1} ~ \overline{\boldsymbol{u}}_i^T  \overline{\boldsymbol{u}})}_{\mathring{\lambda}_i} \overline{\boldsymbol{u}}_i + \lambda_{m+1} \underbrace{\left(\overline{\boldsymbol{u}}_{m+1} - \sum_{i=1}^{m} ( \overline{\boldsymbol{u}}_i^T  \overline{\boldsymbol{u}}) \overline{\boldsymbol{u}}_i\right)}_{\mathring{\overline{\boldsymbol{u}}}_{m+1}}
+\]</span></p>
+<p><span class="math display">\[\overline{\boldsymbol{u}}_{m+1} \longleftarrow \frac{\mathring{\overline{\boldsymbol{u}}}_{m+1}}{\Vert\mathring{\overline{\boldsymbol{u}}}_{m+1} \Vert_{\mathbb{K}}}
+\]</span></p>
+<p><span class="math display">\[
+        \lambda_{m+1} \longleftarrow \lambda_{m+1} \Vert\mathring{\overline{\boldsymbol{u}}}_{m+1} \Vert_{\mathbb{K}}
+\]</span> <span class="math display">\[
+    \{\lambda_i\}_{i\in\mathopen{~[\!\![~}1,m\mathclose{~]\!\!]}} \gets \{\mathring{\lambda}_i\}_{i\in\mathopen{~[\!\![~}1,m\mathclose{~]\!\!]}}
+\]</span></p>
+<ul>
+<li>Much more tricky with more thant 2 parameters in the tensor decomposition</li>
+</ul>
+</section>
+<section id="appendix---pgd-of-a-known-field-eigen-value-problem" class="slide level2" data-visibility="uncounted">
+<h2>Appendix - PGD of a known field &amp; eigen value problem</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Let <span class="math inline">\(\boldsymbol{u}\left(\boldsymbol{x},t\right)\)</span> defined on <span class="math inline">\(t \in I = \left[0,T\right]\)</span> and <span class="math inline">\(\boldsymbol{x} \in \Omega \subset \mathbb{R}^d\)</span>. Let’s look at the single mode decomposition: <span class="math display">\[\left(\boldsymbol{\overline{u}}_1, \lambda_1\right) = \mathop{\mathrm{arg\,min}}_{\mathcal{U},\mathcal{I}} \left\Vert \boldsymbol{u} - \boldsymbol{\overline{u}}_1 \lambda_1 \right\Vert^2\]</span></li>
+</ul>
+<p><span class="math display">\[\Leftrightarrow\int_{I\times\Omega}\left(\boldsymbol{u} -  \boldsymbol{\overline{u}}_1 \lambda_1 \right)\left( \boldsymbol{\overline{u}}^* \lambda^* \right) ~\mathrm{d}\Omega\mathrm{d}t = 0 \forall \lambda^* \in \mathcal{I}, \forall \boldsymbol{\overline{u}}^* \in \mathcal{U}\]</span></p>
+<p><span class="math display">\[\Leftrightarrow\begin{cases}
+\lambda_1\left(t \right) = \frac{\int_{\Omega}\boldsymbol{u}\left(\boldsymbol{x},t \right)\boldsymbol{\overline{u}}_1 ~\mathrm{d}\Omega}{\int_{\Omega} \boldsymbol{\overline{u}}_1^2 ~\mathrm{d}\Omega} = f\left( \lambda_1 \right) \\
+\boldsymbol{\overline{u}}_1\left(\boldsymbol{x} \right) =\frac{\int_{I}\boldsymbol{u}\left(\boldsymbol{x},t \right) \lambda_1 \mathrm{d}t}{\int_{I} \lambda_1^2 \mathrm{d}t} = g\left( \boldsymbol{\overline{u}}_1 \right)
+\end{cases}\]</span></p>
+<p><span class="math display">\[ \Leftrightarrow \lambda_1 = f \circ g \left( \lambda_1 \right)\]</span></p>
+<p><span class="math display">\[ \Leftrightarrow \underbrace{\int_{\Omega} \boldsymbol{u}\int_{I}\boldsymbol{u}\lambda_1 \mathrm{d}t ~\mathrm{d}\Omega}_{T\left(\lambda_1 \right)} =  \underbrace{\frac{\int_{\Omega \left(\int_I \boldsymbol{u}\lambda_1\mathrm{d}t \right)^2 ~\mathrm{d}\Omega}}{\int_I \lambda_1^2\mathrm{d}t}}_ {\omega^2}\lambda_1\]</span></p>
+<ul>
+<li><span class="math inline">\(\left\Vert \boldsymbol{u} - \boldsymbol{\overline{u}}_1\lambda_1\right\Vert = \left\Vert \boldsymbol{u}\right\Vert^2 - R\left( \lambda_1 \right)\)</span></li>
+</ul>
+<p>with</p>
+<p><span class="math inline">\(R\left( \lambda_1 \right) = \omega^2\)</span></p>
+</div><div class="column" style="width:50%;">
+<div class="mybox">
+<div class="mybox-header">
+<p>Eigen value problem</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Equivalent to searching for the stationarity of a rayleigh’s quotient</li>
+<li>It can be shown that minimising the truncation error amounts to fining the largest eigenvalues</li>
+</ul>
+</div>
+</div>
+<div class="mybox">
+<div style="margin-top: 1em;">
+
+</div>
+<div class="mybox-header">
+<p>In practice</p>
+</div>
+<div class="mybox-body">
+<ul>
+<li>Modes are computed greedily
+<ul>
+<li>Less optimal</li>
+</ul></li>
+<li>The temporal modes can be updated
+<ul>
+<li>improved accuracy</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div></div>
+</section>
+<section id="appendix---einstein-notation" class="slide level2" data-visibility="uncounted">
+<h2>Appendix - Einstein notation</h2>
+<p>Writing the linear elasticity with the einstein notation:</p>
+<ul>
+<li><span class="math display">\[            W_{\text{int}} =   \int_{\mathcal{B}}\frac{1}{2} \int_{\Omega}\mathcal{\boldsymbol{\varepsilon}}: \mathbb{C} : \mathcal{\boldsymbol{\varepsilon}}~\mathrm{d}\Omega\mathrm{d}\beta = \frac{1}{2} K_{ij} \mathcal{\boldsymbol{\varepsilon}}_{j}\left(\boldsymbol{\overline{u}}_{em}\right) \mathcal{\boldsymbol{\varepsilon}}_{i}\left(\boldsymbol{\overline{u}}_{el}\right) \mathrm{det}\left(J\right)_{em} \lambda^{\left(1\right)}_{mp} \lambda^{\left(2\right)}_{lp}  \lambda^{\left(1\right)}_{mt} \lambda^{\left(2\right)}_{lt} E_p\]</span></li>
+</ul>
+<div class="quarto-auto-generated-content">
+<p><img src="Logo.svg" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="main_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="main_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="main_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="main_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="main_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="main_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="main_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="main_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

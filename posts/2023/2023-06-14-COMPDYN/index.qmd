@@ -1,0 +1,11 @@
+---
+title: "COMPDYN 2023 congress"
+date: "2023-06-14"
+categories: 
+  - "News"
+image: "compdyn.jpg"
+---
+
+I presented my PhD work at [COMPDYN 2023 congress](http://2023.compdyn.org/) in Athens, Greece.
+
+![](compdyn.jpg){width="50%" fig-align="center"}

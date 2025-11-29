@@ -1,0 +1,9 @@
+---
+title: "New position"
+date: "2024-01-02"
+categories: 
+  - "News"
+image: "Logo_X.png"
+---
+
+I got a new position as Postdoctoral researcher at École Polytechnique and INRIA in the <a href="https://m3disim.saclay.inria.fr/">MΞDISIM team</a>.

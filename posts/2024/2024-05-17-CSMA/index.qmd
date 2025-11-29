@@ -1,0 +1,11 @@
+---
+title: "CSMA 2024"
+date: "2024-05-17"
+categories: 
+  - "News"
+image: "giens_2024.jpg"
+---
+
+I presented [my PhD work](https://hal.science/hal-03717959) at [CSMA 2024](https://csma2024.sciencesconf.org/) in Giens.
+
+![](giens_2024.jpg){width="50%" fig-align="center"}

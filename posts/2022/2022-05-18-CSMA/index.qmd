@@ -1,0 +1,11 @@
+---
+title: "CSMA 2022"
+date: "2022-05-18"
+categories: 
+  - "News"
+image: "CSMA_2022.jpeg"
+---
+
+I presented [my PhD work](https://hal.science/hal-03717959) at [CSMA 2022](https://csma2022.sciencesconf.org/) in Giens.
+
+![](CSMA_2022.jpeg){width="50%" fig-align="center"}

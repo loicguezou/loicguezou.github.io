@@ -1,0 +1,105 @@
+---
+title: Research
+format:
+  html:
+    page-layout: full
+---
+
+:::: {style='margin-top: 3em;'}
+::::
+
+## {{< iconify fa-solid:book >}} &nbsp; Publications
+
+<!-- <IFRAME width="100%" height="500" src="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?auteur_exp=Alexandre+Daby-Seesaram&idHal=alexandre-daby-seesaram&CB_auteur=oui&CB_titre=oui&CB_article=oui&CB_DOI=oui&CB_vignette=oui&langue=Anglais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=https://alexandredabyseesaram.github.io/Hal_css.css" FRAMEBORDER="0" scrolling="auto" ></IFRAME> -->
+<div id="iframe-container"></div>
+
+
+## {{< iconify fa6-regular:pen-to-square >}} &nbsp; Work in progress
+
+### Manifold learning - geometry parametrisation of lungs
+
+**Authors:** [A. Daby-seesaram](index.qmd), [M. Genet](https://mgenet.github.io/)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](Resources/Videos/Lungs_digital_twin4.mp4){ width="70%" loop="true" autoplay=true fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+:::: {style='margin-top: 3em;'}
+::::
+
+To achieve the goal of building a digital twin of the lung, a key requirement is the ability to accommodate a wide variety of patient geometries without the need for costly new computations. To this end, reducing the dimensionality in which the variability of shapes is expressed is crucial. Starting from a generic lung shape, the diversity of encountered morphologies is represented as a family of mappings from the generic shape to each patient's specific anatomy on which reduced-order modelling techniques are used.
+
+
+:::
+
+::::
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](Resources/Videos/tracking_3D_lung_raw.mp4){ width="70%" loop="true" autoplay=true fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+The first step to get a parametrised model of the lung is to register the geometry of the lungs. We encode the geometry of lungs throught displacement fields from generic shapes to deformed meshes closely matching the shape of each patient's lungs. The mapping $\phi$ minimises
+
+$$ \int_{\Omega} I\circ\phi\left(\underline{X}\right) \mathrm{det}\left(\underline{\underline{F}}\right) \mathrm{d}\Omega $$ with $I$ the signed segmented scan of the patient.
+
+:::
+
+::::
+
+
+
+### Hybridising standard reduced-order modelling methods with interpretable sparse neural networks for real-time patient specific lung simulations
+
+**Authors:**  <a href="index.qmd">A. Daby-seesaram<a>, <a href="https://m3disim.saclay.inria.fr/people/katerina-skardova/">K. Škardová<a>, <a href="https://mgenet.github.io/">M. Genet<a>  
+
+Mechanics and, more specifically, stress fields possibly play a crucial role in the development of pulmonary fibrosis. This work aims to provide clinicians with diagnostic and prognostic tools based on mechanical simulation. Personalisation of these tools is critical for clinical pertinence, thus requiring numerical techniques for real-time estimation of patient-specific mechanical parameters.
+This work proposes hybridising classical model-order reduction methods with machine learning capabilities to provide a fine-tuned surrogate model of the highly non-linear mechanics problem.
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](Resources/Videos/NeuROM_3D_gravity_ter.mov){ width="70%" loop="true" autoplay=true fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+
+
+Similarly to techniques like the Proper Generalised Decomposition (PGD) or the High-Order Singular Value Decomposition (HOSVD), the parametric mechanical field is represented through a tensor decomposition, effectively mitigating the curse of dimensionality associated with high-dimensional parameters. Each mode of the tensor decomposition is given by the output of a sparse neural network within the HiDeNN framework, constraining the weights and biases to emulate classical shape functions used in the Finite Element Method.
+
+:::
+
+::::
+
+This hybridisation preserves interpretability while affording greater flexibility than standard model-order reduction methods. For instance, it allows for employing diverse meshes for each mode in the tensor decomposition, with the added capability of mesh adaptation during the training stage. Moreover, the model's architecture results directly from the number of nodes and the order of elements used for the interpolation, thus eliminating the arbitrariness in its choice.
+
+In this framework, the training stage amounts to solving the minimisation problem classically encountered with classical model reduction methods. However, the automatic differentiation tools naturally available in the neural network framework allow greater flexibility in solving the non-linear problem when its linearisation is not straightforward. Finally, this framework allows for transfer learning between different models with different architectures, leading to high efficiency in the model's design and limiting the wasteful use of resources.
+
+
+#### Illustrations
+
+:::: {style='margin-top: 2em;'}
+::::
+
+##### {{< iconify fa-solid:caret-right >}} &nbsp; Hybrid sparse neural network and Proper Generalised Decomposition (PGD)
+
+<video width="100%" controls>
+  <source src="Resources/Videos/HiDeNN.mp4" type="video/mp4">
+</video>

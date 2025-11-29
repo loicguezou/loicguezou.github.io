@@ -1,0 +1,9 @@
+---
+title: "Mortech 2023"
+date: "2023-11-24"
+categories: 
+  - "News"
+image: "Mortech.jpg"
+---
+
+I presented my PhD work at [MORTech 2023 (6th International Workshop on Model Reduction Techniques)](https://mortech2023.sciencesconf.org/) at Laboratoire de Mécanique de Paris-Saclay (LMPS), École Normale Supérieure de Paris-Saclay where I met my future colleagues [Martin Genet](https://mgenet.github.io/) and [Kateřina Škardová](https://m3disim.saclay.inria.fr/people/katerina-skardova).

@@ -1,0 +1,22 @@
+---
+title: "Two new papers in *Computational Mechanics*"
+bibliography: ../../../Resources/biblio_web.bib
+date: "2025-08-30"
+categories: 
+  - "News"
+image: "logo_PGD.png"
+---
+
+ [Martin Genet](https://mgenet.github.io/), [Katerina Skardova](https://m3disim.saclay.inria.fr/people/katerina-skardova/) and I just published two papers in [*Computational Mechanics*](https://link.springer.com/journal/466), entitled 
+
+ * [Finite element neural network interpolation: Part I—interpretable and adaptive discretization for solving PDEs](https://link.springer.com/article/10.1007/s00466-025-02677-3), and
+ * [Finite element neural network interpolation: Part II—hybridisation with the proper generalised decomposition for non-linear surrogate modelling](https://link.springer.com/article/10.1007/s00466-025-02676-4). 
+
+ All computations from the paper (which rely on NeuROM [@daby-seesaramNeuROM2024a]) are easily reproducible at 
+
+* [https://alexandredabyseesaram.github.io/FENNI-I-paper-demo](https://alexandredabyseesaram.github.io/FENNI-I-paper-demo/), and
+* [https://alexandredabyseesaram.github.io/FENNI-II-PGD-paper-demo](https://alexandredabyseesaram.github.io/FENNI-II-PGD-paper-demo),
+
+so do not hesitate to give it a try, and let us know how it goes!
+
+![](../../../Resources/Videos/NeuROM_3D_gravity_ter.mov){ width="75%" loop="true" autoplay=true fig-align="center"}

@@ -1,0 +1,12 @@
+---
+title: "Invitation to talk about my PhD experience"
+date: "2025-02-04"
+categories: 
+  - "News"
+image: "SPI.png"
+---
+
+
+I was recently invited to share my PhD experience on the blog of the French national network of engineering science doctoral schools. You can find lots of information and feedback from academia on their blog!
+
+You can find the interview [here](https://www.docteurs-spi.org/post/from-mechanics-lab-to-the-clinic-patient-specific-digital-twins-in-medicine).

@@ -1,0 +1,11 @@
+---
+title: "New version is out"
+date: "2025-03-02"
+categories: 
+  - "News"
+image: "Logo.png"
+---
+
+ [NeuROM](https://pypi.org/project/NeuROM-Py/#description) v4.0.0 is out today! You can now solve parametrised PDEs on 3D geometries. As always, it's open source—check it out!
+
+![](../../../Resources/Videos/NeuROM_3D.mp4){ width="50%" loop="true" autoplay=true fig-align="center"}

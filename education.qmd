@@ -1,0 +1,37 @@
+---
+title: Education
+image: Resources/Images/Defence_croped.jpeg
+toc: false
+about:
+  template: marquee
+#   image-shape: round
+  image-title: PhD Defence, 1st of December 2023
+format:
+  html:
+    page-layout: full
+---
+
+* **2020 - 2023** <a href="Resources/Documents/PhD_Thesis.pdf">PhD</a> in Computational mechanics 
+  * **Title** [Towards an Optimal Multi-query Framework based on Model-order Reduction for Non-linear Dynamics](Resources/Documents/PhD_Thesis.pdf)
+  * **At** [Laboratoire de Mécanique Paris-Saclay](https://lmps.ens-paris-saclay.fr/en/presentation) (UMR 9026, Université Paris-Saclay, CentraleSupélec, [ENS Paris-Saclay](https://ens-paris-saclay.fr/en), CNRS)  
+  * **Supervision** [Pr. David Néron](https://lmps.ens-paris-saclay.fr/en/node/1215), Dr. A. Fau, Dr. PÉ Charbonnel
+* **2019 - 2020** Master of science (M2R) - [École Normale Supérieure Paris-Saclay](https://ens-paris-saclay.fr/en) / [CentraleSupélec](https://www.centralesupelec.fr/en) (MS2SC)  
+  * **Thesis** Model reduction in non-linear dynamics for visco-plasticity problems
+  * **At** [Laboratoire de Mécanique Paris-Saclay](https://lmps.ens-paris-saclay.fr/en/presentation) (UMR 9026, Université Paris-Saclay, CentraleSupélec, [ENS Paris-Saclay](https://ens-paris-saclay.fr/en), CNRS)  
+  * **Supervision** [Pr. David Néron](https://lmps.ens-paris-saclay.fr/en/node/1215)
+* **2018 - 2019** Scientific teaching qualification (agrégation de mécanique)  
+* **2017 - 2018** Master of science (1) - [École Normale Supérieure Paris-Saclay](https://ens-paris-saclay.fr/en) (MMS)
+  * **Thesis** Predicting the acoustic absorption of meta-materials using a combination of analytical and numerical approaches
+  * **At** [Trinity College, Dublin, Ireland](https://www.tcd.ie/)
+  * **Supervision** [Pr. Henry Rice](https://www.tcd.ie/mecheng/staff/hrice/)
+  * **Research project** Loading step and arc-length adaptation methods for non-linear hyperelasticity computations
+  * **Supervision** [Dr. Emmanuel Baranger](https://lmps.ens-paris-saclay.fr/fr/annuaire-des-personnes/emmanuel-baranger-0)
+* **2016 - 2017** Bachelor&#039;s degree in Engineering - [École Normale Supérieure Paris-Saclay](https://ens-paris-saclay.fr/en)
+* **2014 - 2016** MPSI-PSI* (Lycée Hoche, Versailles), Intensive two-year class of mathematics, physics and engineering sciences preparing for selective entrance examination to the French Grandes Ecoles 
+* **2011 - 2014** Baccalauréat (A-levels) - with first class honours (Lycée Hoche, Versailles)
+
+### Additional resources:
+
+* In collaboration with <a href="https://floiseau.github.io/">Flavien Loiseau</a>, we made our Ph.D. thesis template openly available <a href="https://github.com/floiseau/PhD_Thesis_Template">on Github</a>.
+
+* A more detailed version of my background can be found in my <a href="Resources/Documents/CV.pdf">[CV]</a>.

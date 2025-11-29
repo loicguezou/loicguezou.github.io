@@ -1,0 +1,37 @@
+::selection {
+    color: #e6ecefff !important;
+    background: #00677F !important;
+}
+
+
+.my-custom-class {
+    color: #4CAF50;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.custom-bullets-neg li {
+    color: #CE0037; /* Bullet color */
+  }
+  
+
+  .custom-bullets-pos li {
+    color: #43B02A; /* Bullet color */
+  }
+  
+  .custom-bullets-pos li span {
+    color: blue; /* Text color */
+  }
+
+.light {
+  color: #6e7b7d; /* Text color */
+}
+
+.important {
+  color: rgb(169, 32, 33); /* Text color */
+}
+
+.fiche {
+  color: rgb(107, 126, 81); /* Text color */
+}

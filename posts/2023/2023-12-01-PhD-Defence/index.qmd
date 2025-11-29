@@ -1,0 +1,29 @@
+---
+title: "PhD Defence"
+date: "2023-12-01"
+categories: 
+  - "News"
+image: "Defence.jpeg"
+---
+
+## Towards an Optimal Multi-query Framework based on Model-order Reduction for Non-linear Dynamics
+
+Today I successfully defended my PhD in front of a jury composed of
+
+* Professor Daniel Rixen  (President of the jury), 
+    * *TU München*
+* Professor Francisco Chinesta (Reviewer), 
+    *  *ENSAM Paris* 
+* Professor Anthony Gravouil (Reviewer), 
+    *  *INSA Lyon* 
+* Professor Udo Nackenhorst (Examiner),
+    * *LU Hannover*
+* Doctor Maria Paola Santisi d'Avila (Examiner),
+    *  *Université Côte d'Azur*
+
+
+## Documents
+My PhD dissertation is available <a href="Resources/Documents/PhD_Thesis.pdf">here.</a>
+
+
+![](Defence.jpeg){width="50%" fig-align="center"}

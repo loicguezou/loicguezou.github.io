@@ -1,0 +1,9 @@
+---
+title: "New paper is out"
+date: "2023-04-12"
+categories: 
+  - "News"
+image: "Hybrid_LATIN_PGD.png"
+---
+
+Our new paper on reduced-order modelling using the PGD in the frequency domain for non-linear dynamics is out in [Nonlinear dynamics](https://link.springer.com/journal/11071).

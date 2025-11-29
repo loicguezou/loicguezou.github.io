@@ -1,0 +1,11 @@
+---
+title: "ECCOMAS 2022 congress"
+date: "2022-06-09"
+categories: 
+  - "News"
+image: "ECCOMAS.png"
+---
+
+I presented my PhD work at [ECCOMAS 2022 congress](https://eccomas.org/2021/01/22/3542/) in Oslo, Norway.
+
+![](ECCOMAS.jpg){width="50%" fig-align="center"}

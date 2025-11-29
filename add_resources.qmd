@@ -1,0 +1,79 @@
+---
+title: Additional resources
+bibliography: Resources/biblio_web.bib
+# toc: false
+# about:
+#   template: marquee
+#   image-shape: round
+format:
+  html:
+    page-layout: full
+---
+
+:::: {style='margin-top: 3em;'}
+::::
+
+
+## {{< iconify fa-solid:code >}} &nbsp; Code
+
+### NeuROM [@daby-seesaramNeuROM2024a]
+[![PyPI Downloads](https://img.shields.io/pypi/dm/NeuROM-Py.svg?label=PyPI%20downloads)](
+https://pypi.org/project/NeuROM-Py/)
+[![GitHub license](https://img.shields.io/github/license/alexandredabyseesaram/neurom)](https://github.com/alexandredabyseesaram/neurom)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13772741.svg)](https://doi.org/10.5281/zenodo.13772741)
+
+:::: {.columns}
+
+::: {.column width="25%"}
+
+![](Resources/Images/NeuROM_ter.svg){width="100%" fig-align="center"}
+
+:::
+
+::: {.column width="75%"}
+
+:::: {style='margin-top: 2.5em;'}
+::::
+
+The reduced-order modelling code used to create surrogate models based on an hybridisation of standard reduced-order modelling methods such as the PGD and Deep learning methods is [public](https://github.com/AlexandreDabySeesaram/NeuROM) and [notebooks with tutorials are also available](https://fenni-pgd-aldabyse-d62c0089e00d70057d8fae6bbaedf6cf1d181c44edf5.gitlabpages.inria.fr/).
+
+
+:::
+
+::::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](Resources/Videos/NeuROM_3D.mp4){ width="70%" loop="true" autoplay=true fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](Resources/Videos/NeuROM_3D_gravity_ter.mov){ width="100%" loop="true" autoplay=true fig-align="center"}
+:::
+
+::::
+
+## {{< iconify fa-solid:chalkboard >}}  &nbsp; Courses
+A few short courses relevant to model reduction are available on my github
+
+* [**Course 1**](https://alexandredabyseesaram.github.io/Non-linear_ROM/kPCA_v_SVD.html) Non-linear manifold learning: SVD and kernel PCA
+* [**Course 2**](https://alexandredabyseesaram.github.io/SVD_Investigations/Autoencoder.html) Non-linear manifold learning: Autoencoders
+* [**Course 3**](https://alexandredabyseesaram.github.io/Simplified_NeuROM_demos/) NN-FEM, simplified implementation of NeuROM [@daby-seesaramNeuROM2024a] in 1D to get started with solving PDEs in the HiDeNN framweork [@zhangHierarchicalDeeplearningNeural2021]
+* [**Course 4**](MMC.qmd) Continuum mechanics illustrations
+
+## {{< iconify fa6-regular:folder-open >}} &nbsp; Documents
+
+### PhD dissertation template
+In collaboration with <a href="https://floiseau.github.io/">Flavien Loiseau</a>, we made our Ph.D. thesis template openly available <a href="https://github.com/floiseau/PhD_Thesis_Template">on Github</a>.
+
+## Illustrations
+
+### Hybrid sparse neural network and Proper Generalised Decomposition (PGD)
+
+The concept of the NN-PGD derived in [@daby-seesaramFiniteElementNeural2025] is illustrated in the following short clip.
+
+<video width="100%" controls>
+  <source src="Resources/Videos/HiDeNN.mp4" type="video/mp4">
+</video>

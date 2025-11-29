@@ -1,0 +1,31 @@
+---
+title: Alexandre Daby-Seesaram
+image: avatar.jpg
+toc: false
+about:
+  template: trestles
+  links:
+    - text: "{{< iconify fa-brands:orcid >}} Orcid"
+      href: http://orcid.org/0000-0002-2374-0971
+    - text: "{{< iconify fa6-brands:google-scholar >}} Scholar"
+      href: https://scholar.google.com/citations?user=dGOOSQcAAAAJ&hl=fr
+    - text: "{{< iconify simple-icons:researchgate >}} Researchgate"
+      href: https://www.researchgate.net/profile/Alexandre-Daby-Seesaram
+    - icon: github
+      text: Github
+      href: https://github.com/AlexandreDabySeesaram?tab=repositories
+    - icon: envelope
+      text: Email
+      href: 'mailto: alexandre.daby-seesaram@polytechnique.edu'
+format:
+  html:
+    page-layout: full
+---
+# Welcome, 
+I'm Alexandre Daby-Seesaram, a Postdoctoral researcher at École Polytechnique and INRIA in the <a href="https://m3disim.saclay.inria.fr/">MΞDISIM team</a>.
+
+I hold a Ph.D. in <b>computational mechanics</b> from the University Paris-Saclay (ENS Paris-Saclay), where I worked at the LMPS (Laboratory of Mechanics Paris-Saclay). You can learn more about my background in my <a href="Resources/Documents/CV.pdf">[CV]</a>. 
+
+My main research interest consists of solving highly non-linear problems using <b>model-order reduction</b> techniques such as the Proper Generalised Decomposition (PGD). I've recently become interested in hybridising classical model-order reduction methods with machine learning approaches. Combining tensor decomposition and interpretable neural networks enables efficient and robust solving of large non-linear problems. 
+
+

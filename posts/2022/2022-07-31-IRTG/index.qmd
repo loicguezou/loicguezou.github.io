@@ -1,0 +1,11 @@
+---
+title: "Visiting scholar at Leibniz University Hannover"
+date: "2023-07-31"
+categories: 
+  - "News"
+image: "IRTG.jpg"
+---
+
+
+As part of the [IRTG 2657](https://www.irtg2657.uni-hannover.de/en/), I have been invited to join Prof. Dr.-Ing. Michael Beer's team at the [Institute for Risk and Reliability  ](https://www.irz.uni-hannover.de/en/) and Prof. Dr.-Ing. Udo Nackenhorst's team at the [Institute of Mechanics and Computational Mechanics](https://www.ibnm.uni-hannover.de/en/).
+

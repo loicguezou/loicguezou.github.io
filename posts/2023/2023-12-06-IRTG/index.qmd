@@ -1,0 +1,11 @@
+---
+title: "IRTG 2657 2nd Annual Meeting"
+date: "2023-12-06"
+categories: 
+  - "News"
+image: "IRTG_Logo_2.png"
+---
+
+The [IRTG 2657](https://www.irtg2657.uni-hannover.de/en/) 2nd Annual Meeting was held in Wernigerode.
+
+![](IRTG_Logo_2.png){width="50%" fig-align="center"}

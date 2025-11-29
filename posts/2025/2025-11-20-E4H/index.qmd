@@ -1,0 +1,16 @@
+---
+title: "E4H Annual forum"
+bibliography: ../../../Resources/biblio_web.bib
+date: "2025-11-20"
+categories: 
+  - "News"
+image: "img2.jpeg"
+# image: "VPH_2.jpg"
+---
+
+Today I had the pleasure to present my (collaborative) work on building a digital twin of the human lungs through interpretable NN-PGD [@daby-seesaramFiniteElementNeural2025] and shape registration from CT-scans at the annual E4H forum @ IP Paris.
+
+The slides accessible [here](https://alexandredabyseesaram.github.io/E4H_2025/#/title-slide).
+
+
+![](img2.jpeg){width="75%" fig-align="center"}

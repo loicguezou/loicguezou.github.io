@@ -1,0 +1,9 @@
+---
+title: "YIC 2021 congress"
+date: "2021-07-09"
+categories: 
+  - "News"
+---
+
+I presented my [PhD work](https://dx.doi.org/10.4995/YIC2021.2021.13255) at [YIC 2021 congress](https://gdocu.upv.es/alfresco/service/api/node/content/workspace/SpacesStore/1fc120c1-6a63-4995-8e27-ccbe47d5ceb0/6651.pdf?guest=true), held online from Valence, Spain.
+
