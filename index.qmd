@@ -1,24 +1,20 @@
 ---
-title: Alexandre Daby-Seesaram
+title: "Loïc Guezou"
 image: avatar.jpg
-bibliography: Resources/biblio_web.bib
 toc: false
 about:
   id: hero-heading
   template: trestles
   links:
     - text: "{{< iconify fa-brands:orcid >}} Orcid"
-      href: http://orcid.org/0000-0002-2374-0971
-    - text: "{{< iconify fa6-brands:google-scholar >}} Scholar"
-      href: https://scholar.google.com/citations?user=dGOOSQcAAAAJ&hl=fr
+      href: https://orcid.org/0009-0006-0965-3480
     - text: "{{< iconify simple-icons:researchgate >}} Researchgate"
-      href: https://www.researchgate.net/profile/Alexandre-Daby-Seesaram
-    - icon: github
-      text: Github
-      href: https://github.com/AlexandreDabySeesaram?tab=repositories
+      href: https://www.researchgate.net/profile/Loic_Guezou
     - icon: envelope
       text: Email
-      href: 'mailto: alexandre.daby-seesaram@polytechnique.edu'
+      href: 'mailto: lo.guezou@gmail.com'
+    # - text: "{{< iconify fa6-brands:google-scholar >}} Scholar"
+    #   href: https://scholar.google.com/citations?user=dGOOSQcAAAAJ&hl=fr
 format:
   html:
     # title-block-banner: "Resources/Images/BG1.png"
@@ -27,52 +23,49 @@ format:
     # title-block-title: false
     # title-block-banner-color: body
     page-layout: custom
-    # include-in-header:
-      # - text: |
-          # <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw" />
+    include-in-header:
+      - text: |
+          <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw" />
 ---
 
 
 
 
-  <!-- <style> -->
-  <!--   body { -->
-  <!--     /* background-image: url('Resources/Images/BG_eq.jpg'); */ -->
-  <!--     /* background-image: url('Resources/Images/BG1.png'); */ -->
-  <!--     /* background-image: url("Resources/Images/Background_Lungs_mesh_2.png"); */ -->
-  <!--     background-image: url("Resources/Images/lungs_website.svg"); -->
-  <!--     background-size: cover; -->
-  <!--     background-position: center; -->
-  <!--     background-repeat: no-repeat; -->
-  <!--     background-attachment: fixed; -->
-  <!--     margin: 0; -->
-  <!--   } -->
-  <!--   /* .page_contente { -->
-  <!--     background-color: rgba(255, 255, 255, 1); -->
-  <!--     left: 0; -->
-  <!--     width: 100%; -->
-  <!--     /* padding: 200px; */ -->
-  <!--     margin: 0; -->
-  <!--     margin-top: 60vh; /* This ensures the white background starts at the middle of the page */ -->
-  <!--   } */ -->
-  <!---->
-  <!-- </style> -->
+  <style>
+    body {
+      /* background-image: url('Resources/Images/BG_eq.jpg'); */
+      /* background-image: url('Resources/Images/BG1.png'); */
+      /* background-image: url("Resources/Images/Background_Lungs_mesh_2.png"); */
+      background-image: url("Resources/Images/lungs_website.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+    }
+    /* .page_contente {
+      background-color: rgba(255, 255, 255, 1);
+      left: 0;
+      width: 100%;
+      /* padding: 200px; */
+      margin: 0;
+      margin-top: 60vh; /* This ensures the white background starts at the middle of the page */
+    } */
+
+  </style>
 
 
 :::::{.page_contente}
 :::{#hero-heading}
 
-<!---->
-<!-- # Welcome,  -->
-<!-- I'm Alexandre Daby-Seesaram, a Postdoctoral Researcher at École Polytechnique. In January, I will be joining ENSTA as an Assistant Professor in the Department of Mechanics. -->
-<!---->
-<!-- I hold a Ph.D. in <b>computational mechanics</b> from the University Paris-Saclay (ENS Paris-Saclay), where I worked at the LMPS (Laboratory of Mechanics Paris-Saclay). You can learn more about my background in my <a href="Resources/Documents/CV.pdf">[CV]</a>.  -->
-<!---->
-<!-- My main research interest consists of solving highly non-linear problems using <b>model-order reduction</b> techniques such as the Proper Generalised Decomposition (PGD). I've recently become interested in hybridising classical model-order reduction methods with machine learning approaches. Combining tensor decomposition and interpretable neural networks enables efficient and robust solving of large non-linear problems.  -->
-<!---->
-<!-- The ultimate goal of my research during my postdoctoral position is to achieve individualisation and real-time simulation of a lung digital twin using model-order -->
-<!-- reduction techniques, thus going from theoretical tools to clinical application for patients with idiopathic pulmonary fibrosis (IPF). -->
-<!---->
+# Hello,
+
+My name is Loïc Guezou. I am currently finishing up my <b>PhD in Computational Mechanics</b> under the supervision of Bing Tie and Andrea Barbarulo at LMPS (Laboratoire de Mécanique Paris-Saclay, a lab of Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS). Estimated date of defense: mid-2026
+
+In that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD),
+
+I am currently looking for a Postdoctoral position in order to explore further the fields of model reduction and/or biomechanics, as well as broadening my interests, notably in in the domains of AI (PINN, ML-ROM...) and uncertainty quantification.
+
 :::: {style='margin-top: 1em;'}
 ::::
 
@@ -99,8 +92,6 @@ format:
 :::: -->
 
 <!-- <iframe width="100%" height="550" src="Resources/AR/3D_lung_AR.html"></IFRAME> -->
-
-<!-- Thanks to [@mathurBriefNoteBuilding2023] for the details on how to set up the AR environment  -->
 
 
 :::

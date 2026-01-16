@@ -1,5 +1,5 @@
 ---
-title: Research
+title: Teaching activities
 toc: false
 # about:
   # template: broadside
@@ -7,9 +7,3 @@ format:
   html:
     page-layout: full
 ---
-
-## Publications
-
-<div id="iframe-container"></div>
-
-## Interests

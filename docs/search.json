@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "Hello,\nMy name is Loïc Guezou. I am currently finishing up my PhD in Computational Mechanics under the supervision of Bing Tie and Andrea Barbarulo at LMPS (Laboratoire de Mécanique Paris-Saclay, a lab of Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS). Estimated date of defense: mid-2026\nIn that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD),\nI am currently looking for a Postdoctoral position in order to explore further the fields of model reduction and/or biomechanics, as well as broadening my interests, notably in in the domains of AI (PINN, ML-ROM…) and uncertainty quantification.\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching activities",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "education.html",
+    "href": "education.html",
+    "title": "Education",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "research.html#interests",
+    "href": "research.html#interests",
+    "title": "Research",
+    "section": "Interests",
+    "text": "Interests"
+  }
+]
