@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Loïc Guezou">
-<meta property="og:image" content="avatar.jpg">
+<meta property="og:image" content="https://loicguezou.github.io/avatar.jpg">
 <meta property="og:site_name" content="Loïc Guezou">
 </head>
 
@@ -182,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="hello" class="level1">
 <h1>Hello,</h1>
 <p>My name is Loïc Guezou. I am currently finishing up my <b>PhD in Computational Mechanics</b> under the supervision of Bing Tie and Andrea Barbarulo at LMPS (Laboratoire de Mécanique Paris-Saclay, a lab of Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS). Estimated date of defense: mid-2026</p>
-<p>In that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD),</p>
+<p>In that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD), for biomimetic applications (3D printing aneurysmal aortic models).</p>
 <p>I am currently looking for a Postdoctoral position in order to explore further the fields of model reduction and/or biomechanics, as well as broadening my interests, notably in in the domains of AI (PINN, ML-ROM…) and uncertainty quantification.</p>
 <div style="margin-top: 1em;">
 </div>
@@ -277,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/loicguezou\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
