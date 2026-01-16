@@ -1,31 +1,24 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
+    "objectID": "talks-publications.html#publications",
+    "href": "talks-publications.html#publications",
+    "title": "Talks and publications",
+    "section": "   Publications",
+    "text": "Publications"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Loïc Guezou",
-    "section": "",
-    "text": "Hello,\nMy name is Loïc Guezou. I am currently finishing up my PhD in Computational Mechanics under the supervision of Bing Tie and Andrea Barbarulo at LMPS (Laboratoire de Mécanique Paris-Saclay, a lab of Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS). Estimated date of defense: mid-2026\nIn that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD),\nI am currently looking for a Postdoctoral position in order to explore further the fields of model reduction and/or biomechanics, as well as broadening my interests, notably in in the domains of AI (PINN, ML-ROM…) and uncertainty quantification.\n\n\n\n\n Back to top"
+    "objectID": "talks-publications.html#talks",
+    "href": "talks-publications.html#talks",
+    "title": "Talks and publications",
+    "section": "   Talks",
+    "text": "Talks\n\n          Conferences\n\n\n\n\n\nMORTech 2025 (website)\nZaragoza, Spain, 25th - 29th of November 2025\nTitle: Dealing with the non-linearity of the material model in parametric Proper Generalized Decomposition\nAuthors: L. Guezou, A. Barbarulo, B. Tie\n\n\n\n Poster\n\n\n\n\n\nECCOMAS 2024 (website)\nLisbon, Portugal, 3rd - 7th of June 2024\nTitle: Development of high-fidelity numerical models for 3D printing of patient-specific anatomy\nAuthors: L. Guezou, A. Barbarulo, B. Tie\n\n\n\n Slides\n\n\n\n Abstract\n\n\n\n\n\nCSMA 2024 (website)\nGiens (Var), France, 13th - 17th of May 2024\nTitle: Development of high-fidelity numerical models for 3D printing of patient-specific anatomy\nAuthors: L. Guezou, A. Barbarulo, B. Tie\n\n\n\n Poster\n\n\n\n Abstract"
   },
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching activities",
     "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Back to top"
+    "text": "Teaching in “Cycle ingénieur” at CentraleSupélec\n\n\n\n\n\n\n\n\n\n2022 - 2024 – Project supervision\n\nSéquence Thématique: Design for Additive Manufacturing (ST7 - 81)\n2nd year students (equiv. 1st year of Master)\n20 hours per year\n\n\n\n\n\n\nTeaching Master students at Université Paris-Saclay (CentraleSupélec)\n\n\n\n2023 - 2025 – Teaching assistant\n\nTutorial sessions in computational structural dynamics\nStudents from Master 2 in Computational Mechanics\n12 hours per year\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "education.html",
@@ -33,19 +26,5 @@
     "title": "Education",
     "section": "",
     "text": "Back to top"
-  },
-  {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "research.html#interests",
-    "href": "research.html#interests",
-    "title": "Research",
-    "section": "Interests",
-    "text": "Interests"
   }
 ]

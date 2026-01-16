@@ -1,9 +1,0 @@
----
-title: Talks
-toc: false
-# about:
-  # template: broadside
-format:
-  html:
-    page-layout: full
----

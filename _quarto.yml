@@ -16,10 +16,8 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - href: research.qmd
-        text: Research
-      - href: talks.qmd
-        text: Talks
+      - href: talks-publications.qmd
+        text: Talks & publications
       - href: teaching.qmd
         text: Teaching
       - href: education.qmd

@@ -1,0 +1,117 @@
+---
+title: Talks and publications
+format:
+  html:
+    page-layout: full
+---
+
+:::: {style='margin-top: 3em;'}
+::::
+
+## {{< iconify basil:book-solid >}} &nbsp; Publications
+
+<!-- <IFRAME width="100%" height="500" src="https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?auteur_exp=Loic+Guezou&idHal=loic-guezou&CB_auteur=oui&CB_titre=oui&CB_article=oui&CB_DOI=oui&CB_vignette=oui&langue=Anglais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&CB_rubriqueDiv=oui&Fen=Aff&css=https://loicguezou.github.io/Hal_css.css" FRAMEBORDER="0" scrolling="auto" ></IFRAME> -->
+<div id="iframe-container"></div>
+
+
+## {{< iconify fa6-solid:clock-rotate-left >}} &nbsp; Talks
+
+
+
+
+### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Conferences
+:::: {style='margin-top: 2em;'}
+::::
+
+
+::::: {.talk-card}
+### MORTech 2025 ([website](https://mortech2025.i3a.es/))
+*Zaragoza, Spain, 25th - 29th of November 2025*
+
+**Title:** Dealing with the non-linearity of the material model in parametric Proper Generalized Decomposition
+
+**Authors:** [L. Guezou](index.qmd), [A. Barbarulo](https://www.centralesupelec.fr/en/Researchers/Andrea-Barbarulo), [B. Tie](https://www.centralesupelec.fr/en/Researchers/bing-tie)
+
+:::: {.columns}
+
+::: {.column width="80pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-solid:chalkboard" aria-label="Slides"></iconify-icon> Poster](resources/presentations/mortech2025/mortech2025-guezou.pdf){.button target="_blank"}
+
+:::
+
+:::
+
+::::
+
+:::::
+
+::::: {.talk-card}
+### ECCOMAS 2024 ([website](https://eccomas2024.org/))
+*Lisbon, Portugal, 3rd - 7th of June 2024*
+
+**Title:** Development of high-fidelity numerical models for 3D printing of patient-specific anatomy
+
+**Authors:** [L. Guezou](index.qmd), [A. Barbarulo](https://www.centralesupelec.fr/en/Researchers/Andrea-Barbarulo), [B. Tie](https://www.centralesupelec.fr/en/Researchers/bing-tie)
+
+:::: {.columns}
+
+::: {.column width="80pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-solid:chalkboard" aria-label="Slides"></iconify-icon> Slides](resources/presentations/eccomas2024/eccomas2024-guezou.pdf){.button target="_blank"}
+
+:::
+
+:::
+
+::: {.column width="85pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-regular:file" aria-label="Code"></iconify-icon> Abstract](https://hal.science/hal-04532173v1){.button target="_blank"}
+
+:::
+
+:::
+
+::::
+
+:::::
+
+::: {.talk-card}
+### CSMA 2024 ([website](https://csma2024.sciencesconf.org/))
+*Giens (Var), France, 13th - 17th of May 2024*
+
+**Title:** Development of high-fidelity numerical models for 3D printing of patient-specific anatomy
+
+**Authors:** [L. Guezou](index.qmd), [A. Barbarulo](https://www.centralesupelec.fr/en/Researchers/Andrea-Barbarulo), [B. Tie](https://www.centralesupelec.fr/en/Researchers/bing-tie)
+
+:::: {.columns}
+
+::: {.column width="80pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-solid:chalkboard" aria-label="Slides"></iconify-icon> Poster](resources/presentations/csma2024/csma2024-guezou.pdf){.button target="_blank"}
+
+:::
+
+:::
+
+::: {.column width="85pt"}
+
+::: {.button}
+
+[<iconify-icon icon="fa-regular:file" aria-label="Code"></iconify-icon> Abstract](https://hal.science/hal-04490216v1/document){.button target="_blank"}
+
+:::
+
+:::
+
+::::
+
+:::
