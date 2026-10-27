@@ -41,16 +41,19 @@ I completed my PhD in Computational Mechanics at [Université Paris-Saclay](http
 
 ::: {.interest-grid}
 ::: {.interest}
-{{< iconify mdi:vector-triangle >}} Model order reduction (PGD)
+{{< iconify mdi:brain >}} Scientific machine learning
 :::
 ::: {.interest}
-{{< iconify mdi:cube-scan >}} Hyperelastic material modelling
+{{< iconify mdi:vector-triangle >}} Model reduction
+:::
+::: {.interest}
+{{< iconify mdi:sigma >}} Constitutive modelling
 :::
 ::: {.interest}
 {{< iconify mdi:heart-pulse >}} Biomechanics
 :::
 ::: {.interest}
-{{< iconify mdi:brain >}} Scientific machine learning
+{{< iconify mdi:sine-wave >}} Non-linear materials
 :::
 :::
 

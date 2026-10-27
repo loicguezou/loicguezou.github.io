@@ -114,18 +114,18 @@ Thesis: *[Development of Hyperelastic Reduced-Order Models For Biomimetic Materi
 
 ::: {}
 #### Technical
-- C++, OpenMP
-- Numerical analysis
-- Finite elements, model order reduction
+- Python, C++
+- Finite Element Method
+- Model Order Reduction
+- Neural Networks
 :::
 
 ::: {}
 #### Languages
 - French (native)
 - English (full professional, TOEIC 980/990)
-- Spanish (limited working)
-- Italian (limited working)
-- Japanese (elementary)
+- German (A1, learning)
+- Spanish, Italian (limited working)
 :::
 
 :::
