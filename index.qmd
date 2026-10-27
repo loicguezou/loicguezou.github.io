@@ -3,12 +3,18 @@ title: "Loïc Guezou"
 subtitle: "Postdoctoral researcher in computational mechanics"
 image: resources/images/avatar.jpg
 pagetitle: "Loïc Guezou"
+open-graph:
+  image: resources/images/social-card.png
+twitter-card:
+  image: resources/images/social-card.png
 about:
   id: about
   template: trestles
   image-shape: round
   image-width: 14em
   links:
+    - text: "{{< iconify simple-icons:googlescholar >}} Scholar"
+      href: https://scholar.google.com/citations?user=SVK3uLkAAAAJ
     - text: "{{< iconify fa-brands:orcid >}} ORCID"
       href: https://orcid.org/0009-0006-0965-3480
     - icon: linkedin
@@ -25,6 +31,32 @@ about:
 include-in-header:
   - text: |
       <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw" />
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Loïc Guezou",
+        "url": "https://loicguezou.github.io",
+        "image": "https://loicguezou.github.io/resources/images/avatar.jpg",
+        "jobTitle": "Postdoctoral researcher",
+        "worksFor": {
+          "@type": "ResearchOrganization",
+          "name": "Institute of Material Systems Modeling, Helmholtz-Zentrum Hereon",
+          "url": "https://www.hereon.de/institutes/material_systems_modeling/index.php.en"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Université Paris-Saclay" },
+          { "@type": "CollegeOrUniversity", "name": "ISAE-Supméca" }
+        ],
+        "knowsAbout": ["Scientific machine learning", "Model order reduction", "Proper Generalised Decomposition", "Constitutive modelling", "Biomechanics", "Hyperelasticity"],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=SVK3uLkAAAAJ",
+          "https://orcid.org/0009-0006-0965-3480",
+          "https://www.linkedin.com/in/loicguezou",
+          "https://www.researchgate.net/profile/Loic_Guezou"
+        ]
+      }
+      </script>
 ---
 
 :::{#about}
@@ -61,7 +93,7 @@ I completed my PhD in Computational Mechanics at [Université Paris-Saclay](http
 
 ::: {.news}
 - [Oct 2026]{.news-date} Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.
-- [Jul 2026]{.news-date} Defended my PhD at Université Paris-Saclay ([thesis](https://theses.fr/2026UPAST085)).
+- [Jul 2026]{.news-date} Defended my PhD at Université Paris-Saclay ([summary](thesis.qmd)).
 - [Nov 2025]{.news-date} Poster at [MORTech 2025](talks.qmd), Zaragoza.
 - [Jun 2024]{.news-date} Talk at [ECCOMAS 2024](talks.qmd), Lisbon.
 :::

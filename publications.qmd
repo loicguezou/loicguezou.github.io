@@ -17,7 +17,7 @@ listing:
 A journal article on my PhD findings is in preparation. It should be submitted before the end of 2026.
 :::
 
-The full list is also available as a [BibTeX file](publications.bib) and on [HAL](https://hal.science/search/index/?q=authIdHal_s:loic-guezou) and [ORCID](https://orcid.org/0009-0006-0965-3480).
+The full list is also available as a [BibTeX file](publications.bib) and on [Google Scholar](https://scholar.google.com/citations?user=SVK3uLkAAAAJ), [HAL](https://hal.science/search/index/?q=authIdHal_s:loic-guezou) and [ORCID](https://orcid.org/0009-0006-0965-3480).
 
 ::: {#pubs}
 :::

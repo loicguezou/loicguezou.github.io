@@ -10,6 +10,9 @@
   venue: "Université Paris-Saclay, Mechanics of solids and structures"
   note: "Supervised by Bing Tie and Andrea Barbarulo (LMPS). Defended on 16 July 2026."
   links:
+    - text: Summary
+      icon: journal-text
+      href: thesis.qmd
     - text: theses.fr
       icon: mortarboard
       href: https://theses.fr/2026UPAST085

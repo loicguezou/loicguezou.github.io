@@ -9,6 +9,9 @@
   dates: "16 July 2026"
   authors: "L. Guezou"
   links:
+    - text: Summary
+      icon: journal-text
+      href: thesis.qmd
     - text: Thesis
       icon: mortarboard
       href: https://theses.fr/2026UPAST085

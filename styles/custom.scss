@@ -187,6 +187,17 @@ h2 {
   ul { padding-left: 1.1rem; margin-bottom: 0; }
 }
 
+// Thesis key facts (margin) -----------------------------------------------------
+.thesis-facts {
+  font-size: 0.9rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--bs-secondary);
+  border-radius: 0.4rem;
+  background: rgba(var(--bs-body-color-rgb), 0.03);
+  p { margin-bottom: 0.6rem; }
+  strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--bs-secondary); }
+}
+
 // Teaching ---------------------------------------------------------------------
 .teach-card {
   display: grid;

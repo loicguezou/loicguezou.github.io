@@ -12,6 +12,12 @@ toc-title: "On this page"
 - {{< iconify bi:building >}} [loic.guezou@tuhh.de](mailto:loic.guezou@tuhh.de) [TUHH]{.contact-label}
 :::
 
+::: {.chips}
+[{{< iconify bi:file-earmark-pdf >}} Download PDF CV](resources/loicguezou-cv.pdf)
+[{{< iconify simple-icons:googlescholar >}} Google Scholar](https://scholar.google.com/citations?user=SVK3uLkAAAAJ)
+[{{< iconify fa-brands:orcid >}} ORCID](https://orcid.org/0009-0006-0965-3480)
+:::
+
 ## Experience
 
 ::: {.timeline}
