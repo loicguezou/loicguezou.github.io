@@ -1,45 +1,52 @@
 [
   {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Talks & posters",
+    "objectID": "thesis.html",
+    "href": "thesis.html",
+    "title": "PhD thesis",
     "section": "",
-    "text": "Conference talks, posters and other presentations, with slides where available.\n\n\n    \n      \n      \n    \n\n\n\n\n\n2026\n\n\nDefence\n\n\n\n\nDevelopment of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition\n\n\nPhD defence, Université Paris-Saclay · 16 July 2026\n\n\nL. Guezou\n\n\nThesis\n\n\n\n\n\n\n2025\n\n\nPoster\n\n\n\n\nDealing with the non-linearity of the material model in parametric Proper Generalized Decomposition\n\n\nMORTech 2025 · Zaragoza, Spain · 25–29 November 2025\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nPoster\n\n\n\n\n\n\n2024\n\n\nTalk\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nECCOMAS Congress 2024 · Lisbon, Portugal · 3–7 June 2024\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nSlides\nAbstract\n\n\n\n\n\n\n2024\n\n\nPoster\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nCSMA 2024 · Giens, France · 13–17 May 2024\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nPoster\nPaper\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+    "text": "Defended16 July 2026\nInstitutionUniversité Paris-Saclay, LMPS\nSupervisorsBing Tie, Andrea Barbarulo\nJury Aline Bel-Brunon (president) Pedro Díez (reviewer) Udo Nackenhorst (reviewer) Alexandre Daby-Seesaram\nProjectANR-RHU EndoVx, Work Package 4"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Loïc Guezou",
-    "section": "",
-    "text": "ORCID\n  \n  \n    \n     LinkedIn\n  \n  \n      ResearchGate\n  \n  \n    \n     Email\n  \n  \n    \n     CV\n  \n\n  \n  \n\nPostdoctoral researcher · Helmholtz-Zentrum Hereon\n\nI am a postdoctoral researcher at the Institute of Material Systems Modeling of the Helmholtz-Zentrum Hereon (Hamburg area, Germany), working in computational mechanics.\nI completed my PhD in Computational Mechanics at Université Paris-Saclay in July 2026, at the Laboratoire de Mécanique Paris-Saclay (LMPS), under the supervision of Bing Tie and Andrea Barbarulo. My thesis developed hyperelastic reduced-order models based on the Proper Generalised Decomposition (PGD), for biomimetic material applications such as 3D printing patient-specific aneurysmal aortic models.\n\n\n\n\n Scientific machine learning\n\n\n Model reduction\n\n\n Constitutive modelling\n\n\n Biomechanics\n\n\n Non-linear materials\n\n\n\n\n\n\n\nOct 2026 Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.\nJul 2026 Defended my PhD at Université Paris-Saclay (thesis).\nNov 2025 Poster at MORTech 2025, Zaragoza.\nJun 2024 Talk at ECCOMAS 2024, Lisbon.\n\n\n\n\n\n\n\n lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
+    "objectID": "thesis.html#context",
+    "href": "thesis.html#context",
+    "title": "PhD thesis",
+    "section": "Context",
+    "text": "Context\nThis thesis is part of Work Package 4 of the ANR-RHU EndoVx project. Its purpose is the numerical simulation of 3D-printed models replicating an abdominal aortic aneurysm (AAA), with the goal of developing surgical simulators for training and fast rehearsal of operations.\nDuring endovascular aneurysm repair (EVAR), guides are introduced into the anatomy, which produces complex loads at varying locations. Simulating every possible loading position with standard finite elements would be far too slow for a simulator."
   },
   {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "Loïc Guezou",
-    "section": "",
-    "text": "Scientific machine learning\n\n\n Model reduction\n\n\n Constitutive modelling\n\n\n Biomechanics\n\n\n Non-linear materials"
+    "objectID": "thesis.html#approach-proper-generalised-decomposition",
+    "href": "thesis.html#approach-proper-generalised-decomposition",
+    "title": "PhD thesis",
+    "section": "Approach: Proper Generalised Decomposition",
+    "text": "Approach: Proper Generalised Decomposition\nTo address this, the thesis uses reduced-order modelling (ROM), specifically the Proper Generalised Decomposition (PGD). PGD is an a priori ROM technique: it separates variables in the solution, so that complex parametric problems are solved once instead of repeating computations over time or parameter ranges. Here, the extra parameter is the loading position.\nIntroductory results are first presented in 1D and 2D for a linear elastic material."
   },
   {
-    "objectID": "index.html#news",
-    "href": "index.html#news",
-    "title": "Loïc Guezou",
-    "section": "",
-    "text": "Oct 2026 Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.\nJul 2026 Defended my PhD at Université Paris-Saclay (thesis).\nNov 2025 Poster at MORTech 2025, Zaragoza.\nJun 2024 Talk at ECCOMAS 2024, Lisbon."
+    "objectID": "thesis.html#extending-pgd-to-hyperelasticity",
+    "href": "thesis.html#extending-pgd-to-hyperelasticity",
+    "title": "PhD thesis",
+    "section": "Extending PGD to hyperelasticity",
+    "text": "Extending PGD to hyperelasticity\nThe main goal is to extend the method to a hyperelastic material model, which is consistent with the models used for biological tissues and with most of the 3D-printing materials simulated. A hyperelastic material is characterised by a strain energy density function and shows non-linear elastic behaviour. The thesis uses the Saint-Venant–Kirchhoff model: despite known limitations, it is sufficient for this type of work as long as strains stay reasonable. Stress and strain are linked linearly, but strain and displacement follow a non-linear relationship in the finite-strain framework.\nHyperelasticity introduces terms of various orders of non-linearity in the PGD weak form. Handling them requires:\n\nan incremental formulation, treating the full load as a sequence of loading steps, with PGD performed successively on each increment;\na suitable linearisation strategy to compute the PGD solution."
   },
   {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Loïc Guezou",
-    "section": "",
-    "text": "lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
+    "objectID": "thesis.html#main-contribution-linearisation-strategies",
+    "href": "thesis.html#main-contribution-linearisation-strategies",
+    "title": "PhD thesis",
+    "section": "Main contribution: linearisation strategies",
+    "text": "Main contribution: linearisation strategies\nThe main contribution is the application of a linearisation strategy previously used for other forms of non-linearity. It reduces higher-order terms to first order by introducing a known approximation, and the central question is what this approximation is built from:\n\nExplicit approximation\n\nuses the solution known from the previous modes.\n\nImplicit approximation\n\nadds the last known solution from the computation of the current mode, i.e. performs the linearisation inside the fixed-point loop rather than in the outer PGD loop. More accurate, but more expensive.\n\nMixed strategy\n\napplies the implicit approximation to some modes only, to keep the cost down. In practice, the first two modes of each increment are computed implicitly and the rest explicitly."
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
+    "objectID": "thesis.html#results",
+    "href": "thesis.html#results",
+    "title": "PhD thesis",
+    "section": "Results",
+    "text": "Results\nThe strategies are compared in 1D and 2D, on a simple rectangular domain and on a more complex Y-shaped domain, and the advantages and drawbacks of each are analysed. The implicit and mixed strategies give good results for third-order computations without requiring small loading increments, while the performance of the other strategies and orders varies from case to case.\nThe thesis also covers numerical aspects of implementing the method, and briefly explores another PGD decomposition that uses the loading amplitude as the extra parameter, instead of or combined with the loading position."
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "During my PhD I taught engineering and Master students at CentraleSupélec and Université Paris-Saclay.\n\n\nComputational structural dynamics\n2023 – 2025 · Teaching assistant\n\nTutorial sessions in computational structural dynamics\nStudents of the Master 2 in Computational Mechanics, Université Paris-Saclay (CentraleSupélec)\n12 hours per year\n\n\n\n\n\n\nDesign for Additive Manufacturing\n2022 – 2024 · Project supervision\n\nSupervision of student projects in the Séquence Thématique Design for Additive Manufacturing (ST7-81)\n2nd-year students of the CentraleSupélec engineering programme (1st year of Master level)\n20 hours per year\n\n\n\n\n\n\nPrivate tutoring\n2019 – 2020 · Le Bon Binôme, Paris\n\nLessons, revision and exercises for secondary-school pupils, adapted to each student’s difficulties\n\n\n\n\n\n\n Back to top"
+    "text": "A journal article on my PhD findings is in preparation. It should be submitted before the end of 2026.\n\n\n\nThe full list is also available as a BibTeX file and on Google Scholar, HAL and ORCID.\n\n\n    \n      \n      \n    \n\n\n\n\n\n2026\n\n\nPhD thesis\n\n\n\n\nDevelopment of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition\n\n\nL. Guezou\n\n\nUniversité Paris-Saclay, Mechanics of solids and structures\n\n\nSupervised by Bing Tie and Andrea Barbarulo (LMPS). Defended on 16 July 2026.\n\n\nSummary\ntheses.fr\nDOI\n\n\n\n\n\n\n2024\n\n\nConference\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nECCOMAS Congress 2024, 9th European Congress on Computational Methods in Applied Sciences and Engineering, Lisbon, Portugal\n\n\nHAL\nSlides\n\n\n\n\n\n\n2024\n\n\nConference\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\n16ème Colloque National en Calcul de Structures (CSMA 2024), Giens, France\n\n\nPDF\nHAL\nPoster\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "cv.html",
@@ -70,10 +77,45 @@
     "text": "Skills & languages\n\n\nTechnical\n\nPython, C++\nFinite Element Method\nModel Order Reduction\nNeural Networks\n\n\n\nLanguages\n\nFrench (native)\nEnglish (full professional, TOEIC 980/990)\nGerman (A1, learning)\nSpanish, Italian (limited working)"
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
     "section": "",
-    "text": "A journal article on my PhD findings is in preparation. It should be submitted before the end of 2026.\n\n\n\nThe full list is also available as a BibTeX file and on HAL and ORCID.\n\n\n    \n      \n      \n    \n\n\n\n\n\n2026\n\n\nPhD thesis\n\n\n\n\nDevelopment of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition\n\n\nL. Guezou\n\n\nUniversité Paris-Saclay, Mechanics of solids and structures\n\n\nSupervised by Bing Tie and Andrea Barbarulo (LMPS). Defended on 16 July 2026.\n\n\ntheses.fr\nDOI\n\n\n\n\n\n\n2024\n\n\nConference\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nECCOMAS Congress 2024, 9th European Congress on Computational Methods in Applied Sciences and Engineering, Lisbon, Portugal\n\n\nHAL\nSlides\n\n\n\n\n\n\n2024\n\n\nConference\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\n16ème Colloque National en Calcul de Structures (CSMA 2024), Giens, France\n\n\nPDF\nHAL\nPoster\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+    "text": "During my PhD I taught engineering and Master students at CentraleSupélec and Université Paris-Saclay.\n\n\nComputational structural dynamics\n2023 – 2025 · Teaching assistant\n\nTutorial sessions in computational structural dynamics\nStudents of the Master 2 in Computational Mechanics, Université Paris-Saclay (CentraleSupélec)\n12 hours per year\n\n\n\n\n\n\nDesign for Additive Manufacturing\n2022 – 2024 · Project supervision\n\nSupervision of student projects in the Séquence Thématique Design for Additive Manufacturing (ST7-81)\n2nd-year students of the CentraleSupélec engineering programme (1st year of Master level)\n20 hours per year\n\n\n\n\n\n\nPrivate tutoring\n2019 – 2020 · Le Bon Binôme, Paris\n\nLessons, revision and exercises for secondary-school pupils, adapted to each student’s difficulties\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "Scholar\n  \n  \n      ORCID\n  \n  \n    \n     LinkedIn\n  \n  \n      ResearchGate\n  \n  \n    \n     Email\n  \n  \n    \n     CV\n  \n\n  \n  \n\nPostdoctoral researcher · Helmholtz-Zentrum Hereon\n\nI am a postdoctoral researcher at the Institute of Material Systems Modeling of the Helmholtz-Zentrum Hereon (Hamburg area, Germany), working in computational mechanics.\nI completed my PhD in Computational Mechanics at Université Paris-Saclay in July 2026, at the Laboratoire de Mécanique Paris-Saclay (LMPS), under the supervision of Bing Tie and Andrea Barbarulo. My thesis developed hyperelastic reduced-order models based on the Proper Generalised Decomposition (PGD), for biomimetic material applications such as 3D printing patient-specific aneurysmal aortic models.\n\n\n\n\n Scientific machine learning\n\n\n Model reduction\n\n\n Constitutive modelling\n\n\n Biomechanics\n\n\n Non-linear materials\n\n\n\n\n\n\n\nOct 2026 Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.\nJul 2026 Defended my PhD at Université Paris-Saclay (summary).\nNov 2025 Poster at MORTech 2025, Zaragoza.\nJun 2024 Talk at ECCOMAS 2024, Lisbon.\n\n\n\n\n\n\n\n lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "Scientific machine learning\n\n\n Model reduction\n\n\n Constitutive modelling\n\n\n Biomechanics\n\n\n Non-linear materials"
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "Oct 2026 Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.\nJul 2026 Defended my PhD at Université Paris-Saclay (summary).\nNov 2025 Poster at MORTech 2025, Zaragoza.\nJun 2024 Talk at ECCOMAS 2024, Lisbon."
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks & posters",
+    "section": "",
+    "text": "Conference talks, posters and other presentations, with slides where available.\n\n\n    \n      \n      \n    \n\n\n\n\n\n2026\n\n\nDefence\n\n\n\n\nDevelopment of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition\n\n\nPhD defence, Université Paris-Saclay · 16 July 2026\n\n\nL. Guezou\n\n\nSummary\nThesis\n\n\n\n\n\n\n2025\n\n\nPoster\n\n\n\n\nDealing with the non-linearity of the material model in parametric Proper Generalized Decomposition\n\n\nMORTech 2025 · Zaragoza, Spain · 25–29 November 2025\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nPoster\n\n\n\n\n\n\n2024\n\n\nTalk\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nECCOMAS Congress 2024 · Lisbon, Portugal · 3–7 June 2024\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nSlides\nAbstract\n\n\n\n\n\n\n2024\n\n\nPoster\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nCSMA 2024 · Giens, France · 13–17 May 2024\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nPoster\nPaper\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   }
 ]
