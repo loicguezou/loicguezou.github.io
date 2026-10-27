@@ -1,0 +1,23 @@
+---
+title: "Publications"
+aliases:
+  - talks-publications.html
+listing:
+  id: pubs
+  contents: data/publications.yml
+  template: _templates/publications.ejs
+  sort: "date desc"
+  filter-ui: true
+  sort-ui: false
+  field-display-names:
+    type: Type
+---
+
+::: {.callout-note appearance="simple"}
+A journal article on my PhD findings is in preparation. It should be submitted before the end of 2026.
+:::
+
+The full list is also available as a [BibTeX file](publications.bib) and on [HAL](https://hal.science/search/index/?q=authIdHal_s:loic-guezou) and [ORCID](https://orcid.org/0009-0006-0965-3480).
+
+::: {#pubs}
+:::

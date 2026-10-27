@@ -1,0 +1,15 @@
+---
+title: "Talks & posters"
+listing:
+  id: talks
+  contents: data/talks.yml
+  template: _templates/talks.ejs
+  sort: "date desc"
+  filter-ui: true
+  sort-ui: false
+---
+
+Conference talks, posters and other presentations, with slides where available.
+
+::: {#talks}
+:::

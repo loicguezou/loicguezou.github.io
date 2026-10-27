@@ -1,102 +1,74 @@
 ---
 title: "Loïc Guezou"
-image: avatar.jpg
-toc: false
+subtitle: "Postdoctoral researcher in computational mechanics"
+image: resources/images/avatar.jpg
+pagetitle: "Loïc Guezou"
 about:
-  id: hero-heading
+  id: about
   template: trestles
+  image-shape: round
+  image-width: 14em
   links:
-    - text: "{{< iconify fa-brands:orcid >}} Orcid"
+    - text: "{{< iconify fa-brands:orcid >}} ORCID"
       href: https://orcid.org/0009-0006-0965-3480
-    - text: "{{< iconify simple-icons:researchgate >}} Researchgate"
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/loicguezou
+    - text: "{{< iconify simple-icons:researchgate >}} ResearchGate"
       href: https://www.researchgate.net/profile/Loic_Guezou
     - icon: envelope
       text: Email
-      href: 'mailto: lo.guezou@gmail.com'
-    # - text: "{{< iconify fa6-brands:google-scholar >}} Scholar"
-    #   href: https://scholar.google.com/citations?user=dGOOSQcAAAAJ&hl=fr
-format:
-  html:
-    # title-block-banner: "Resources/Images/BG1.png"
-    # title-block-style: default
-    # title-block-categories: false
-    # title-block-title: false
-    # title-block-banner-color: body
-    page-layout: custom
-    include-in-header:
-      - text: |
-          <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw" />
+      href: "mailto:lo.guezou@gmail.com"
+    - icon: file-earmark-person
+      text: CV
+      href: cv.qmd
+include-in-header:
+  - text: |
+      <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw" />
 ---
 
+:::{#about}
 
-
-
-  <style>
-    body {
-      /* background-image: url('Resources/Images/BG_eq.jpg'); */
-      /* background-image: url('Resources/Images/BG1.png'); */
-      /* background-image: url("Resources/Images/Background_Lungs_mesh_2.png"); */
-      background-image: url("Resources/Images/lungs_website.svg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      margin: 0;
-    }
-    /* .page_contente {
-      background-color: rgba(255, 255, 255, 1);
-      left: 0;
-      width: 100%;
-      /* padding: 200px; */
-      margin: 0;
-      margin-top: 60vh; /* This ensures the white background starts at the middle of the page */
-    } */
-
-  </style>
-
-
-:::::{.page_contente}
-:::{#hero-heading}
-
-# Hello,
-
-My name is Loïc Guezou. I am currently finishing up my <b>PhD in Computational Mechanics</b> under the supervision of Bing Tie and Andrea Barbarulo at LMPS (Laboratoire de Mécanique Paris-Saclay, a lab of Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS). Estimated date of defense: mid-2026
-
-In that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD), for biomimetic applications (3D printing aneurysmal aortic models).
-
-I am currently looking for a Postdoctoral position in order to explore further the fields of model reduction and/or biomechanics, as well as broadening my interests, notably in in the domains of AI (PINN, ML-ROM...) and uncertainty quantification.
-
-:::: {style='margin-top: 1em;'}
-::::
-
-::: {.line}
-
-<div style="border-top: 1px solid #00436d; width: 45%; margin: 0 auto;"></div>
-
+::: {.lead-role}
+Postdoctoral researcher · Helmholtz-Zentrum Hereon
 :::
 
-:::: {style='margin-top: 0em;'}
-::::
+I am a postdoctoral researcher at the [Institute of Material Systems Modeling](https://www.hereon.de/institutes/material_systems_modeling/index.php.en) of the [Helmholtz-Zentrum Hereon](https://www.hereon.de) (Hamburg area, Germany), working in **computational mechanics**.
 
-:::: {.columns}
+I completed my PhD in Computational Mechanics at [Université Paris-Saclay](https://www.universite-paris-saclay.fr) in July 2026, at the [Laboratoire de Mécanique Paris-Saclay](https://lmps.ens-paris-saclay.fr) (LMPS), under the supervision of Bing Tie and Andrea Barbarulo. My thesis developed **hyperelastic reduced-order models** based on the **Proper Generalised Decomposition (PGD)**, for biomimetic material applications such as 3D printing patient-specific aneurysmal aortic models.
 
-::: {.column width="15%"}
+## Research interests
 
+::: {.interest-grid}
+::: {.interest}
+{{< iconify mdi:vector-triangle >}} Model order reduction (PGD)
+:::
+::: {.interest}
+{{< iconify mdi:cube-scan >}} Hyperelastic material modelling
+:::
+::: {.interest}
+{{< iconify mdi:heart-pulse >}} Biomechanics
+:::
+::: {.interest}
+{{< iconify mdi:brain >}} Scientific machine learning
+:::
 :::
 
-::: {.column width="80%"}
+## News
 
-<!-- ![](Resources/Images/Background_Lungs_mesh_2.png){width="80%" style="display: block; margin: 0 auto;"}
-
-:::: {style='margin-top: 3em;'}
-:::: -->
-
-<!-- <iframe width="100%" height="550" src="Resources/AR/3D_lung_AR.html"></IFRAME> -->
-
-
+::: {.news}
+- [Oct 2026]{.news-date} Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.
+- [Jul 2026]{.news-date} Defended my PhD at Université Paris-Saclay ([thesis](https://theses.fr/2026UPAST085)).
+- [Nov 2025]{.news-date} Poster at [MORTech 2025](talks.qmd), Zaragoza.
+- [Jun 2024]{.news-date} Talk at [ECCOMAS 2024](talks.qmd), Lisbon.
 :::
 
-::::
+## Contact
+
+::: {.contact-list}
+- {{< iconify bi:envelope >}} [lo.guezou@gmail.com](mailto:lo.guezou@gmail.com) [Permanent]{.contact-label}
+- {{< iconify bi:building >}} [loic.guezou@hereon.de](mailto:loic.guezou@hereon.de) [Hereon]{.contact-label}
+- {{< iconify bi:building >}} [loic.guezou@tuhh.de](mailto:loic.guezou@tuhh.de) [TUHH]{.contact-label}
+:::
 
 :::
-:::::

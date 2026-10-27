@@ -1,0 +1,28 @@
+<%
+const highlight = (s) => (s || '').replace('L. Guezou', '<span class="me">L. Guezou</span>');
+const year = (d) => (d ? new Date(d).getFullYear() : '');
+%>
+<div class="entry-list list">
+<% for (const item of items) { %>
+<div class="entry-card" <%= metadataAttrs(item) %>>
+<div class="entry-side">
+<div class="entry-year"><%= year(item.date) %></div>
+<div class="entry-type listing-categories"><%= item.type %></div>
+</div>
+<div>
+<p class="entry-title listing-title"><%= item.title %></p>
+<div class="entry-meta">
+<% if (item['event-url']) { %><a href="<%= item['event-url'] %>"><strong><%= item.event %></strong></a><% } else { %><strong><%= item.event %></strong><% } %><% if (item.location) { %> · <%= item.location %><% } %><% if (item.dates) { %> · <%= item.dates %><% } %>
+</div>
+<div class="entry-meta"><%= highlight(item.authors) %></div>
+<% if (item.links) { %>
+<div class="chips">
+<% for (const l of item.links) { %>
+<a href="<%= l.href %>"><i class="bi bi-<%= l.icon %>"></i><%= l.text %></a>
+<% } %>
+</div>
+<% } %>
+</div>
+</div>
+<% } %>
+</div>
