@@ -1,30 +1,79 @@
 [
   {
-    "objectID": "talks-publications.html#publications",
-    "href": "talks-publications.html#publications",
-    "title": "Talks and publications",
-    "section": "   Publications",
-    "text": "Publications\nA paper on my PhD findings is currently in the works and should be submitted before the end of 2026."
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks & posters",
+    "section": "",
+    "text": "Conference talks, posters and other presentations, with slides where available.\n\n\n    \n      \n      \n    \n\n\n\n\n\n2026\n\n\nDefence\n\n\n\n\nDevelopment of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition\n\n\nPhD defence, Université Paris-Saclay · 16 July 2026\n\n\nL. Guezou\n\n\nThesis\n\n\n\n\n\n\n2025\n\n\nPoster\n\n\n\n\nDealing with the non-linearity of the material model in parametric Proper Generalized Decomposition\n\n\nMORTech 2025 · Zaragoza, Spain · 25–29 November 2025\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nPoster\n\n\n\n\n\n\n2024\n\n\nTalk\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nECCOMAS Congress 2024 · Lisbon, Portugal · 3–7 June 2024\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nSlides\nAbstract\n\n\n\n\n\n\n2024\n\n\nPoster\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nCSMA 2024 · Giens, France · 13–17 May 2024\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nPoster\nPaper\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "talks-publications.html#talks-at-conferences",
-    "href": "talks-publications.html#talks-at-conferences",
-    "title": "Talks and publications",
-    "section": "   Talks at conferences",
-    "text": "Talks at conferences\n\n\n\n\n\nMORTech 2025 (website)\nZaragoza, Spain, 25th - 29th of November 2025\nTitle: Dealing with the non-linearity of the material model in parametric Proper Generalized Decomposition\nAuthors: L. Guezou, A. Barbarulo, B. Tie\n\n\n\n Poster\n\n\n\n\n\nECCOMAS 2024 (website)\nLisbon, Portugal, 3rd - 7th of June 2024\nTitle: Development of high-fidelity numerical models for 3D printing of patient-specific anatomy\nAuthors: L. Guezou, A. Barbarulo, B. Tie\n\n\n\n Slides\n\n\n\n Abstract\n\n\n\n\n\nCSMA 2024 (website)\nGiens (Var), France, 13th - 17th of May 2024\nTitle: Development of high-fidelity numerical models for 3D printing of patient-specific anatomy\nAuthors: L. Guezou, A. Barbarulo, B. Tie\n\n\n\n Poster\n\n\n\n Abstract"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "ORCID\n  \n  \n    \n     LinkedIn\n  \n  \n      ResearchGate\n  \n  \n    \n     Email\n  \n  \n    \n     CV\n  \n\n  \n  \n\nPostdoctoral researcher · Helmholtz-Zentrum Hereon\n\nI am a postdoctoral researcher at the Institute of Material Systems Modeling of the Helmholtz-Zentrum Hereon (Hamburg area, Germany), working in computational mechanics.\nI completed my PhD in Computational Mechanics at Université Paris-Saclay in July 2026, at the Laboratoire de Mécanique Paris-Saclay (LMPS), under the supervision of Bing Tie and Andrea Barbarulo. My thesis developed hyperelastic reduced-order models based on the Proper Generalised Decomposition (PGD), for biomimetic material applications such as 3D printing patient-specific aneurysmal aortic models.\n\n\n\n\n Scientific machine learning\n\n\n Model reduction\n\n\n Constitutive modelling\n\n\n Biomechanics\n\n\n Non-linear materials\n\n\n\n\n\n\n\nOct 2026 Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.\nJul 2026 Defended my PhD at Université Paris-Saclay (thesis).\nNov 2025 Poster at MORTech 2025, Zaragoza.\nJun 2024 Talk at ECCOMAS 2024, Lisbon.\n\n\n\n\n\n\n\n lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "Scientific machine learning\n\n\n Model reduction\n\n\n Constitutive modelling\n\n\n Biomechanics\n\n\n Non-linear materials"
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "Oct 2026 Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.\nJul 2026 Defended my PhD at Université Paris-Saclay (thesis).\nNov 2025 Poster at MORTech 2025, Zaragoza.\nJun 2024 Talk at ECCOMAS 2024, Lisbon."
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Loïc Guezou",
+    "section": "",
+    "text": "lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
   },
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
-    "title": "Teaching activities",
+    "title": "Teaching",
     "section": "",
-    "text": "Teaching in “Cycle ingénieur” at CentraleSupélec\n\n\n\n\n\n\n\n\n\n2022 - 2024 – Project supervision\n\nSéquence Thématique: Design for Additive Manufacturing (ST7 - 81)\n2nd year students (equiv. 1st year of Master)\n20 hours per year\n\n\n\n\n\n\nTeaching Master students at Université Paris-Saclay (CentraleSupélec)\n\n\n\n2023 - 2025 – Teaching assistant\n\nTutorial sessions in computational structural dynamics\nStudents from Master 2 in Computational Mechanics\n12 hours per year\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "During my PhD I taught engineering and Master students at CentraleSupélec and Université Paris-Saclay.\n\n\nComputational structural dynamics\n2023 – 2025 · Teaching assistant\n\nTutorial sessions in computational structural dynamics\nStudents of the Master 2 in Computational Mechanics, Université Paris-Saclay (CentraleSupélec)\n12 hours per year\n\n\n\n\n\n\nDesign for Additive Manufacturing\n2022 – 2024 · Project supervision\n\nSupervision of student projects in the Séquence Thématique Design for Additive Manufacturing (ST7-81)\n2nd-year students of the CentraleSupélec engineering programme (1st year of Master level)\n20 hours per year\n\n\n\n\n\n\nPrivate tutoring\n2019 – 2020 · Le Bon Binôme, Paris\n\nLessons, revision and exercises for secondary-school pupils, adapted to each student’s difficulties\n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "education.html",
-    "href": "education.html",
-    "title": "Education",
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum vitae",
     "section": "",
-    "text": "2022 - 2026 Ph.D. in Computational mechanics\n\nTitle Development of hyperelastic reduced-order models using Proper Generalised Decomposition (working title)\nAt Laboratoire de Mécanique Paris-Saclay (UMR 9026, Université Paris-Saclay, CentraleSupélec, ENS Paris-Saclay, CNRS)\nSupervision Bing Tie, Andrea Barbarulo\n\n2021 - 2022 M.Sc in Computational Mechanics - École Normale Supérieure Paris-Saclay / CentraleSupélec (MS2SC)\n\nAt Laboratoire de Mécanique Paris-Saclay (UMR 9026, Université Paris-Saclay, CentraleSupélec, ENS Paris-Saclay, CNRS)\nSupervision Bing Tie, Andrea Barbarulo\n\n2019 - 2022 M.Sc. in Mechanical Engineering - ISAE-Supméca\n2017 - 2019 CPGE (Lycée Condorcet, Paris), Preparatory cycle to the top Engineering schools entrance exams\n\n\nInternships:\n\n2022 (6 months) Research intern in Computational Mechanics\n\nAt Laboratoire de Mécanique Paris-Saclay (UMR 9026, Université Paris-Saclay, CentraleSupélec, ENS Paris-Saclay, CNRS)\nMaster research internship. Developing a PGD dual formulation (pressure-velocity) for acoustic dynamic computations.\nSupervision Bing Tie, Andrea Barbarulo\n\n2020-2021 (5 months) Engineer assistant intern in Research & Development\n\nAt NUVIA Protection,\nQuantification of the head loss in fire protection devices for the nuclear sector.\n\n2020 (1 month) Student intern\n\nAt Laboratoire de Physique de l’Ecole Normale Supérieure,\n\n\nA more detailed version of my background can be found in my CV.\n\n\n\n Back to top"
+    "text": "lo.guezou@gmail.com Permanent\n loic.guezou@hereon.de Hereon\n loic.guezou@tuhh.de TUHH"
+  },
+  {
+    "objectID": "cv.html#experience",
+    "href": "cv.html#experience",
+    "title": "Curriculum vitae",
+    "section": "Experience",
+    "text": "Experience\n\n\nOct 2026 – present\nPostdoctoral researcher Institute of Material Systems Modeling, Helmholtz-Zentrum Hereon · Hamburg area, Germany\n\n\nOct 2022 – Jul 2026\nPhD candidate in computational mechanics Laboratoire de Mécanique Paris-Saclay (LMPS) · Gif-sur-Yvette, France\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy. Hyperelastic reduced-order models using the Proper Generalised Decomposition. PhD students’ representative on the council of doctoral school ED 579 (SMEMaG).\n\n\nMar 2022 – Sep 2022\nResearch intern in mechanical engineering Laboratoire de Mécanique Paris-Saclay (LMPS) · Gif-sur-Yvette, France\n\n\nSep 2020 – Jan 2021\nR&D assistant engineer intern NUVIA · Morestel, France\n\n\nJan 2020\nStudent intern École normale supérieure · Paris, France\n\n\nOct 2019 – Sep 2020\nPrivate tutor Le Bon Binôme · Paris, France\nTutoring secondary-school pupils: lessons, revision and exercises adapted to each student."
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum vitae",
+    "section": "Education",
+    "text": "Education\n\n\n2022 – 2026\nPhD, Mechanics of solids and structures Université Paris-Saclay\nThesis: Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition. Defended on 16 July 2026.\n\n\n2021 – 2022\nMaster 2, Computational mechanical engineering Université Paris-Saclay\n\n\n2019 – 2022\nEngineering degree (Diplôme d’ingénieur) ISAE-Supméca, Institut supérieur de mécanique de Paris\n\n\n2017 – 2019\nClasses préparatoires (CPGE), PCSI – PC Lycée Condorcet, Paris\n\n\n2014 – 2017\nEuropean Baccalauréat, Science Lycée Gabriel Guist’hau, Nantes"
+  },
+  {
+    "objectID": "cv.html#skills-languages",
+    "href": "cv.html#skills-languages",
+    "title": "Curriculum vitae",
+    "section": "Skills & languages",
+    "text": "Skills & languages\n\n\nTechnical\n\nPython, C++\nFinite Element Method\nModel Order Reduction\nNeural Networks\n\n\n\nLanguages\n\nFrench (native)\nEnglish (full professional, TOEIC 980/990)\nGerman (A1, learning)\nSpanish, Italian (limited working)"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "A journal article on my PhD findings is in preparation. It should be submitted before the end of 2026.\n\n\n\nThe full list is also available as a BibTeX file and on HAL and ORCID.\n\n\n    \n      \n      \n    \n\n\n\n\n\n2026\n\n\nPhD thesis\n\n\n\n\nDevelopment of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition\n\n\nL. Guezou\n\n\nUniversité Paris-Saclay, Mechanics of solids and structures\n\n\nSupervised by Bing Tie and Andrea Barbarulo (LMPS). Defended on 16 July 2026.\n\n\ntheses.fr\nDOI\n\n\n\n\n\n\n2024\n\n\nConference\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\nECCOMAS Congress 2024, 9th European Congress on Computational Methods in Applied Sciences and Engineering, Lisbon, Portugal\n\n\nHAL\nSlides\n\n\n\n\n\n\n2024\n\n\nConference\n\n\n\n\nDevelopment of high-fidelity numerical models for 3D printing of patient-specific anatomy\n\n\nL. Guezou, A. Barbarulo, B. Tie\n\n\n16ème Colloque National en Calcul de Structures (CSMA 2024), Giens, France\n\n\nPDF\nHAL\nPoster\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   }
 ]

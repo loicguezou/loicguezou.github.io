@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Loïc Guezou</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -30,17 +36,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./id.png" rel="icon" type="image/png">
+<link href="./resources/images/avatar.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ee0d825c001f130fb265e92dcb17fa1f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-86a2d7ae3330a5c8f2af512998a51a4c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ee0d825c001f130fb265e92dcb17fa1f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2f537f0c802fd81dbf206d7e6fe876b2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ac7379bbf690fbeaecc320026612964a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-2f537f0c802fd81dbf206d7e6fe876b2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -69,16 +78,179 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw">
 
 
-<link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Loïc Guezou">
-<meta property="og:image" content="https://loicguezou.github.io/avatar.jpg">
+<meta property="og:description" content="Postdoctoral researcher in computational mechanics">
+<meta property="og:image" content="https://loicguezou.github.io/resources/images/avatar.jpg">
 <meta property="og:site_name" content="Loïc Guezou">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,121 +266,162 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks-publications.html"> 
-<span class="menu-text">Talks &amp; publications</span></a>
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./education.html"> 
-<span class="menu-text">Education</span></a>
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/loicguezou"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lo.guezou@gmail.com"> <i class="bi bi-envelope" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    
 <!-- main -->
+<main class="content" id="quarto-document-content">
 
 
 
 
-<style>
-    body {
-      /* background-image: url('Resources/Images/BG_eq.jpg'); */
-      /* background-image: url('Resources/Images/BG1.png'); */
-      /* background-image: url("Resources/Images/Background_Lungs_mesh_2.png"); */
-      background-image: url("Resources/Images/lungs_website.svg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      margin: 0;
-    }
-    /* .page_contente {
-      background-color: rgba(255, 255, 255, 1);
-      left: 0;
-      width: 100%;
-      /* padding: 200px; */
-      margin: 0;
-      margin-top: 60vh; /* This ensures the white background starts at the middle of the page */
-    } */
 
-  </style>
-<div class="page_contente">
 <div class="quarto-about-trestles">
   <div class="about-entity">
-    <img src="avatar.jpg" class="about-image
-  rounded " style="width: 20em;">
+    <img src="resources/images/avatar.jpg" class="about-image
+  round " style="height: 14em; width: 14em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Loïc Guezou</h1>
+<p class="subtitle lead">Postdoctoral researcher in computational mechanics</p>
 </div>
 <div class="quarto-title-meta">
   </div>
 </header>
     <div class="about-links">
   <a href="https://orcid.org/0009-0006-0965-3480" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa-brands:orcid" aria-label="Icon orcid from fa-brands Iconify.design set." title="Icon orcid from fa-brands Iconify.design set."></iconify-icon> Orcid</span>
+     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa-brands:orcid" aria-label="Icon orcid from fa-brands Iconify.design set." title="Icon orcid from fa-brands Iconify.design set."></iconify-icon> ORCID</span>
+  </a>
+  <a href="https://www.linkedin.com/in/loicguezou" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
   </a>
   <a href="https://www.researchgate.net/profile/Loic_Guezou" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="simple-icons:researchgate" aria-label="Icon researchgate from simple-icons Iconify.design set." title="Icon researchgate from simple-icons Iconify.design set."></iconify-icon> Researchgate</span>
+     <span class="about-link-text"><iconify-icon role="img" inline="" icon="simple-icons:researchgate" aria-label="Icon researchgate from simple-icons Iconify.design set." title="Icon researchgate from simple-icons Iconify.design set."></iconify-icon> ResearchGate</span>
   </a>
-  <a href="mailto: lo.guezou@gmail.com" class="about-link" rel="" target="">
+  <a href="mailto:lo.guezou@gmail.com" class="about-link" rel="" target="">
     <i class="bi bi-envelope"></i>
      <span class="about-link-text">Email</span>
   </a>
+  <a href="/cv.html" class="about-link" rel="" target="">
+    <i class="bi bi-file-earmark-person"></i>
+     <span class="about-link-text">CV</span>
+  </a>
 </div>
   </div>
-  <div class="about-contents"><div id="hero-heading">
-<section id="hello" class="level1">
-<h1>Hello,</h1>
-<p>My name is Loïc Guezou. I am currently finishing up my <b>PhD in Computational Mechanics</b> under the supervision of Bing Tie and Andrea Barbarulo at LMPS (Laboratoire de Mécanique Paris-Saclay, a lab of Université Paris-Saclay, ENS Paris-Saclay, CentraleSupélec, CNRS). Estimated date of defense: mid-2026</p>
-<p>In that framework, my main research interest lied in solving non-linear (hyperelastic) parametric problems using model order reduction techniques like the Proper Generalised Decomposition (PGD), for biomimetic applications (3D printing aneurysmal aortic models).</p>
-<p>I am currently looking for a Postdoctoral position in order to explore further the fields of model reduction and/or biomechanics, as well as broadening my interests, notably in in the domains of AI (PINN, ML-ROM…) and uncertainty quantification.</p>
-<div style="margin-top: 1em;">
+  <div class="about-contents"><div id="about">
+<div class="lead-role">
+<p>Postdoctoral researcher · Helmholtz-Zentrum Hereon</p>
 </div>
-<div class="line">
-<div style="border-top: 1px solid #00436d; width: 45%; margin: 0 auto;">
+<p>I am a postdoctoral researcher at the <a href="https://www.hereon.de/institutes/material_systems_modeling/index.php.en">Institute of Material Systems Modeling</a> of the <a href="https://www.hereon.de">Helmholtz-Zentrum Hereon</a> (Hamburg area, Germany), working in <strong>computational mechanics</strong>.</p>
+<p>I completed my PhD in Computational Mechanics at <a href="https://www.universite-paris-saclay.fr">Université Paris-Saclay</a> in July 2026, at the <a href="https://lmps.ens-paris-saclay.fr">Laboratoire de Mécanique Paris-Saclay</a> (LMPS), under the supervision of Bing Tie and Andrea Barbarulo. My thesis developed <strong>hyperelastic reduced-order models</strong> based on the <strong>Proper Generalised Decomposition (PGD)</strong>, for biomimetic material applications such as 3D printing patient-specific aneurysmal aortic models.</p>
+<section id="research-interests" class="level2">
+<h2 data-anchor-id="research-interests">Research interests</h2>
+<div class="interest-grid">
+<div class="interest">
+<p><iconify-icon role="img" inline="" icon="mdi:brain" aria-label="Icon brain from mdi Iconify.design set." title="Icon brain from mdi Iconify.design set."></iconify-icon> Scientific machine learning</p>
+</div>
+<div class="interest">
+<p><iconify-icon role="img" inline="" icon="mdi:vector-triangle" aria-label="Icon vector-triangle from mdi Iconify.design set." title="Icon vector-triangle from mdi Iconify.design set."></iconify-icon> Model reduction</p>
+</div>
+<div class="interest">
+<p><iconify-icon role="img" inline="" icon="mdi:sigma" aria-label="Icon sigma from mdi Iconify.design set." title="Icon sigma from mdi Iconify.design set."></iconify-icon> Constitutive modelling</p>
+</div>
+<div class="interest">
+<p><iconify-icon role="img" inline="" icon="mdi:heart-pulse" aria-label="Icon heart-pulse from mdi Iconify.design set." title="Icon heart-pulse from mdi Iconify.design set."></iconify-icon> Biomechanics</p>
+</div>
+<div class="interest">
+<p><iconify-icon role="img" inline="" icon="mdi:sine-wave" aria-label="Icon sine-wave from mdi Iconify.design set." title="Icon sine-wave from mdi Iconify.design set."></iconify-icon> Non-linear materials</p>
 </div>
 </div>
-<div style="margin-top: 0em;">
+</section>
+<section id="news" class="level2">
+<h2 data-anchor-id="news">News</h2>
+<div class="news">
+<ul>
+<li><span class="news-date">Oct 2026</span> Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.</li>
+<li><span class="news-date">Jul 2026</span> Defended my PhD at Université Paris-Saclay (<a href="https://theses.fr/2026UPAST085">thesis</a>).</li>
+<li><span class="news-date">Nov 2025</span> Poster at <a href="./talks.html">MORTech 2025</a>, Zaragoza.</li>
+<li><span class="news-date">Jun 2024</span> Talk at <a href="./talks.html">ECCOMAS 2024</a>, Lisbon.</li>
+</ul>
 </div>
-<div class="columns">
-<div class="column" style="width:15%;">
-</div><div class="column" style="width:80%;">
-<!-- ![](Resources/Images/Background_Lungs_mesh_2.png){width="80%" style="display: block; margin: 0 auto;"}
-:::: {style='margin-top: 3em;'}
-:::: -->
-<!-- <iframe width="100%" height="550" src="Resources/AR/3D_lung_AR.html"></IFRAME> -->
-</div>
+</section>
+<section id="contact" class="level2">
+<h2 data-anchor-id="contact">Contact</h2>
+<div class="contact-list">
+<ul>
+<li><iconify-icon role="img" inline="" icon="bi:envelope" aria-label="Icon envelope from bi Iconify.design set." title="Icon envelope from bi Iconify.design set."></iconify-icon> <a href="mailto:lo.guezou@gmail.com">lo.guezou@gmail.com</a> <span class="contact-label">Permanent</span></li>
+<li><iconify-icon role="img" inline="" icon="bi:building" aria-label="Icon building from bi Iconify.design set." title="Icon building from bi Iconify.design set."></iconify-icon> <a href="mailto:loic.guezou@hereon.de">loic.guezou@hereon.de</a> <span class="contact-label">Hereon</span></li>
+<li><iconify-icon role="img" inline="" icon="bi:building" aria-label="Icon building from bi Iconify.design set." title="Icon building from bi Iconify.design set."></iconify-icon> <a href="mailto:loic.guezou@tuhh.de">loic.guezou@tuhh.de</a> <span class="contact-label">TUHH</span></li>
+</ul>
 </div>
 </section>
 </div></div>
 </div>
 
-</div>
 
 
 
 
-
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -273,7 +486,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/loicguezou\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/loicguezou\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -287,6 +500,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -601,8 +819,22 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Loïc Guezou</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

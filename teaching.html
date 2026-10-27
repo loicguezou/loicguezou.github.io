@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Teaching activities – Loïc Guezou</title>
+<title>Teaching – Loïc Guezou</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -30,18 +36,21 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./id.png" rel="icon" type="image/png">
+<link href="./resources/images/avatar.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ee0d825c001f130fb265e92dcb17fa1f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-86a2d7ae3330a5c8f2af512998a51a4c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ee0d825c001f130fb265e92dcb17fa1f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2f537f0c802fd81dbf206d7e6fe876b2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ac7379bbf690fbeaecc320026612964a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-2f537f0c802fd81dbf206d7e6fe876b2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,15 +78,181 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Teaching activities – Loïc Guezou">
-<meta property="og:image" content="https://loicguezou.github.io/resources/centrale-supelec-campus.webp">
+<meta property="og:title" content="Teaching – Loïc Guezou">
+<meta property="og:description" content="Postdoctoral researcher in computational mechanics: model order reduction, hyperelasticity, biomechanics and scientific machine learning.">
+<meta property="og:image" content="https://loicguezou.github.io/resources/cs-ups-logos.png">
 <meta property="og:site_name" content="Loïc Guezou">
+<meta property="og:image:alt" content="CentraleSupélec and Université Paris-Saclay logos">
+<meta property="og:image:height" content="443">
+<meta property="og:image:width" content="1994">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,46 +268,64 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks-publications.html"> 
-<span class="menu-text">Talks &amp; publications</span></a>
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./teaching.html" aria-current="page"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./education.html"> 
-<span class="menu-text">Education</span></a>
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/loicguezou"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lo.guezou@gmail.com"> <i class="bi bi-envelope" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching activities</h1>
+<h1 class="title">Teaching</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     
   
@@ -144,102 +337,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="teaching-in-cycle-ingénieur-at-centralesupélec" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-in-cycle-ingénieur-at-centralesupélec">Teaching in “Cycle ingénieur” at CentraleSupélec</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/centrale-supelec-campus.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<ul>
-<li><strong>2022 - 2024</strong> – Project supervision
-<ul>
-<li><a href="https://www.centralesupelec.fr/catalogue-de-formations/ingenieur-generaliste-2eme-annee">Séquence Thématique</a>: <strong>Design for Additive Manufacturing</strong> (ST7 - 81)</li>
-<li>2nd year students (equiv. 1st year of Master)</li>
-<li>20 hours per year</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="teaching-master-students-at-université-paris-saclay-centralesupélec" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-master-students-at-université-paris-saclay-centralesupélec">Teaching Master students at Université Paris-Saclay (CentraleSupélec)</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><strong>2023 - 2025</strong> – Teaching assistant
+<p>During my PhD I taught engineering and Master students at CentraleSupélec and Université Paris-Saclay.</p>
+<div class="teach-card">
+<section id="computational-structural-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="computational-structural-dynamics">Computational structural dynamics</h3>
+<p><span class="tl-date">2023 – 2025 · Teaching assistant</span></p>
 <ul>
 <li>Tutorial sessions in <strong>computational structural dynamics</strong></li>
-<li>Students from <a href="https://www.universite-paris-saclay.fr/formation/master/mecanique/m2-modelisation-et-simulation-en-mecanique-des-structures-et-systemes-couples">Master 2 in Computational Mechanics</a></li>
+<li>Students of the <a href="https://www.universite-paris-saclay.fr/formation/master/mecanique/m2-modelisation-et-simulation-en-mecanique-des-structures-et-systemes-couples">Master 2 in Computational Mechanics</a>, Université Paris-Saclay (CentraleSupélec)</li>
 <li>12 hours per year</li>
-</ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><img src="resources/cs-ups-logos.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div><!-- ::::
-
-### Physique-chimie PSI-PSI* Concours X, ENS, CentraleSupélec, Mines-Ponts, CCINP
-
-
-:::: {.columns}
-
-::: {.column width="25%"}
-
-![](Resources/Images/Book_cover.jpg){width="80%" fig-align="center"}
-
-:::
-
-::: {.column width="75%"}
-
-:::: {style='margin-top: 5em;'}
-::::
-
-- Writing a **physics book** for undergraduate students (**Classes Préparatoires aux Grandes Écoles**)
-- **Physics** problems, **corrections**, and **comments**, helping students prepare for their entrance exams to prestigious universities (French "Grandes Écoles").
-
-:::
-
-::::
-
-
-
-### Advanced-level courses
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-I designed notebooks about **dimensionnality reduction** in both linear and non-linear contexts. Those few short courses relevant to model reduction are available on my github
-
-* [**Course 1**](https://alexandredabyseesaram.github.io/Non-linear_ROM/kPCA_v_SVD.html) Non-linear manifold learning: SVD and kernel PCA
-* [**Course 2**](https://alexandredabyseesaram.github.io/SVD_Investigations/Autoencoder.html) Non-linear manifold learning: Autoencoders
-* [**Course 3**](https://alexandredabyseesaram.github.io/Simplified_NeuROM_demos/) NN-FEM, simplified implementation of NeuROM [@daby-seesaramNeuROM2024a] in 1D to get started with solving PDEs in the HiDeNN framweork [@zhangHierarchicalDeeplearningNeural2021]
-
-
-
-:::
-
-::: {.column width="50%"}
-
-![](Resources/Images/BG_eq.jpg){width="80%" fig-align="right"}
-
-
-::: -->
-</div>
-
-
 </section>
+<p><img src="resources/cs-ups-logos.png" class="img-fluid" alt="CentraleSupélec and Université Paris-Saclay logos"></p>
+</div>
+<div class="teach-card">
+<section id="design-for-additive-manufacturing" class="level3">
+<h3 class="anchored" data-anchor-id="design-for-additive-manufacturing">Design for Additive Manufacturing</h3>
+<p><span class="tl-date">2022 – 2024 · Project supervision</span></p>
+<ul>
+<li>Supervision of student projects in the <a href="https://www.centralesupelec.fr/catalogue-de-formations/ingenieur-generaliste-2eme-annee">Séquence Thématique</a> <strong>Design for Additive Manufacturing</strong> (ST7-81)</li>
+<li>2nd-year students of the CentraleSupélec engineering programme (1st year of Master level)</li>
+<li>20 hours per year</li>
+</ul>
+</section>
+<p><img src="resources/centrale-supelec-campus.webp" class="img-fluid" alt="CentraleSupélec campus"></p>
+</div>
+<div class="teach-card">
+<section id="private-tutoring" class="level3">
+<h3 class="anchored" data-anchor-id="private-tutoring">Private tutoring</h3>
+<p><span class="tl-date">2019 – 2020 · Le Bon Binôme, Paris</span></p>
+<ul>
+<li>Lessons, revision and exercises for secondary-school pupils, adapted to each student’s difficulties</li>
+</ul>
+</section>
+</div>
+
+
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -311,7 +461,7 @@ I designed notebooks about **dimensionnality reduction** in both linear and non-
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/loicguezou\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/loicguezou\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -325,6 +475,11 @@ I designed notebooks about **dimensionnality reduction** in both linear and non-
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -639,8 +794,22 @@ I designed notebooks about **dimensionnality reduction** in both linear and non-
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Loïc Guezou</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
