@@ -3,6 +3,8 @@ project:
   resources:
     - resources
     - publications.bib
+    # Google Search Console ownership file: keep it, or verification is lost
+    - googlee76226096459c042.html
 
 brand:
   light: _brand.yml

@@ -30,7 +30,6 @@ about:
       href: cv.qmd
 include-in-header:
   - text: |
-      <meta name="google-site-verification" content="lyL1XECA_aIiJN9ihH1tHYGqzCDubMyGXCILlJTVjZw" />
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
