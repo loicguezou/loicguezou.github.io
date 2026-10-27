@@ -1,0 +1,71 @@
+---
+title: "PhD thesis"
+subtitle: "Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition"
+description: "Summary of Loïc Guezou's PhD thesis (Université Paris-Saclay, 2026): Proper Generalised Decomposition for hyperelastic materials, applied to 3D-printed aortic aneurysm models."
+toc: true
+toc-location: left
+toc-title: "On this page"
+---
+
+::: {.column-margin}
+::: {.thesis-facts}
+**Defended**<br>16 July 2026
+
+**Institution**<br>Université Paris-Saclay, [LMPS](https://lmps.ens-paris-saclay.fr)
+
+**Supervisors**<br>Bing Tie, Andrea Barbarulo
+
+**Jury**<br>
+Aline Bel-Brunon (president)<br>
+Pedro Díez (reviewer)<br>
+Udo Nackenhorst (reviewer)<br>
+Alexandre Daby-Seesaram
+
+**Project**<br>ANR-RHU EndoVx, Work Package 4
+:::
+:::
+
+::: {.chips}
+[{{< iconify bi:mortarboard >}} theses.fr](https://theses.fr/2026UPAST085)
+[{{< iconify bi:link-45deg >}} DOI](https://doi.org/10.70675/91217df6z9bfbz437bzb2e8z687f841f7271)
+:::
+
+## Context
+
+This thesis is part of Work Package 4 of the ANR-RHU **EndoVx** project. Its purpose is the numerical simulation of 3D-printed models replicating an **abdominal aortic aneurysm** (AAA), with the goal of developing surgical simulators for training and fast rehearsal of operations.
+
+During endovascular aneurysm repair (EVAR), guides are introduced into the anatomy, which produces complex loads at varying locations. Simulating every possible loading position with standard finite elements would be far too slow for a simulator.
+
+## Approach: Proper Generalised Decomposition
+
+To address this, the thesis uses **reduced-order modelling** (ROM), specifically the **Proper Generalised Decomposition** (PGD). PGD is an *a priori* ROM technique: it separates variables in the solution, so that complex parametric problems are solved once instead of repeating computations over time or parameter ranges. Here, the extra parameter is the **loading position**.
+
+Introductory results are first presented in 1D and 2D for a linear elastic material.
+
+## Extending PGD to hyperelasticity
+
+The main goal is to extend the method to a **hyperelastic** material model, which is consistent with the models used for biological tissues and with most of the 3D-printing materials simulated. A hyperelastic material is characterised by a strain energy density function and shows non-linear elastic behaviour. The thesis uses the **Saint-Venant–Kirchhoff** model: despite known limitations, it is sufficient for this type of work as long as strains stay reasonable. Stress and strain are linked linearly, but strain and displacement follow a non-linear relationship in the finite-strain framework.
+
+Hyperelasticity introduces terms of various orders of non-linearity in the PGD weak form. Handling them requires:
+
+- an **incremental formulation**, treating the full load as a sequence of loading steps, with PGD performed successively on each increment;
+- a suitable **linearisation strategy** to compute the PGD solution.
+
+## Main contribution: linearisation strategies
+
+The main contribution is the application of a linearisation strategy previously used for other forms of non-linearity. It reduces higher-order terms to first order by introducing a known approximation, and the central question is what this approximation is built from:
+
+Explicit approximation
+: uses the solution known from the previous modes.
+
+Implicit approximation
+: adds the last known solution from the computation of the current mode, i.e. performs the linearisation inside the fixed-point loop rather than in the outer PGD loop. More accurate, but more expensive.
+
+Mixed strategy
+: applies the implicit approximation to some modes only, to keep the cost down. In practice, the first two modes of each increment are computed implicitly and the rest explicitly.
+
+## Results
+
+The strategies are compared in 1D and 2D, on a simple rectangular domain and on a more complex **Y-shaped domain**, and the advantages and drawbacks of each are analysed. The **implicit and mixed strategies** give good results for third-order computations without requiring small loading increments, while the performance of the other strategies and orders varies from case to case.
+
+The thesis also covers numerical aspects of implementing the method, and briefly explores another PGD decomposition that uses the **loading amplitude** as the extra parameter, instead of or combined with the loading position.

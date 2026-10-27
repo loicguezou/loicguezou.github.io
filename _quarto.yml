@@ -13,8 +13,16 @@ website:
   description: "Postdoctoral researcher in computational mechanics: model order reduction, hyperelasticity, biomechanics and scientific machine learning."
   site-url: https://loicguezou.github.io
   favicon: resources/images/avatar.jpg
-  image: resources/images/avatar.jpg
-  open-graph: true
+  image: resources/images/social-card.png
+  open-graph:
+    locale: en_GB
+    site-name: "Loïc Guezou"
+    image-width: 1200
+    image-height: 630
+  twitter-card:
+    card-style: summary_large_image
+    image-width: 1200
+    image-height: 630
   back-to-top-navigation: true
   page-navigation: false
   navbar:
@@ -23,6 +31,8 @@ website:
         text: Home
       - href: publications.qmd
         text: Publications
+      - href: thesis.qmd
+        text: PhD thesis
       - href: talks.qmd
         text: Talks
       - href: teaching.qmd
@@ -30,6 +40,9 @@ website:
       - href: cv.qmd
         text: CV
     right:
+      - icon: mortarboard
+        href: https://scholar.google.com/citations?user=SVK3uLkAAAAJ
+        aria-label: Google Scholar
       - icon: linkedin
         href: https://www.linkedin.com/in/loicguezou
         aria-label: LinkedIn
