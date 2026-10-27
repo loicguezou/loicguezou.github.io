@@ -1,0 +1,39 @@
+meta:
+  name: Loïc Guezou
+  link: https://loicguezou.github.io
+
+color:
+  palette:
+    navy: "#00436d"
+    deep: "#0b2a40"
+    teal: "#1b7f8c"
+    paper: "#fbfbf9"
+    ink: "#1d2730"
+  background: paper
+  foreground: ink
+  primary: navy
+  secondary: teal
+
+typography:
+  fonts:
+    - family: Inter
+      source: google
+      weight: [300, 400, 600, 700]
+      style: [normal, italic]
+    - family: Lora
+      source: google
+      weight: [400, 600]
+    - family: JetBrains Mono
+      source: google
+      weight: [400]
+  base:
+    family: Inter
+    weight: 400
+    line-height: 1.6
+  headings:
+    family: Lora
+    weight: 600
+    color: deep
+  monospace: JetBrains Mono
+  link:
+    color: navy

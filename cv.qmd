@@ -1,0 +1,131 @@
+---
+title: "Curriculum vitae"
+aliases:
+  - education.html
+toc: true
+toc-title: "On this page"
+---
+
+::: {.contact-list}
+- {{< iconify bi:envelope >}} [lo.guezou@gmail.com](mailto:lo.guezou@gmail.com) [Permanent]{.contact-label}
+- {{< iconify bi:building >}} [loic.guezou@hereon.de](mailto:loic.guezou@hereon.de) [Hereon]{.contact-label}
+- {{< iconify bi:building >}} [loic.guezou@tuhh.de](mailto:loic.guezou@tuhh.de) [TUHH]{.contact-label}
+:::
+
+## Experience
+
+::: {.timeline}
+
+::: {.tl-item .current}
+[Oct 2026 – present]{.tl-date}
+
+[Postdoctoral researcher]{.tl-title}<br>
+[Institute of Material Systems Modeling, Helmholtz-Zentrum Hereon · Hamburg area, Germany]{.tl-org}
+:::
+
+::: {.tl-item}
+[Oct 2022 – Jul 2026]{.tl-date}
+
+[PhD candidate in computational mechanics]{.tl-title}<br>
+[Laboratoire de Mécanique Paris-Saclay (LMPS) · Gif-sur-Yvette, France]{.tl-org}
+
+Development of high-fidelity numerical models for 3D printing of patient-specific anatomy. Hyperelastic reduced-order models using the Proper Generalised Decomposition.
+PhD students' representative on the council of doctoral school ED 579 (SMEMaG).
+:::
+
+::: {.tl-item}
+[Mar 2022 – Sep 2022]{.tl-date}
+
+[Research intern in mechanical engineering]{.tl-title}<br>
+[Laboratoire de Mécanique Paris-Saclay (LMPS) · Gif-sur-Yvette, France]{.tl-org}
+:::
+
+::: {.tl-item}
+[Sep 2020 – Jan 2021]{.tl-date}
+
+[R&D assistant engineer intern]{.tl-title}<br>
+[NUVIA · Morestel, France]{.tl-org}
+:::
+
+::: {.tl-item}
+[Jan 2020]{.tl-date}
+
+[Student intern]{.tl-title}<br>
+[École normale supérieure · Paris, France]{.tl-org}
+:::
+
+::: {.tl-item}
+[Oct 2019 – Sep 2020]{.tl-date}
+
+[Private tutor]{.tl-title}<br>
+[Le Bon Binôme · Paris, France]{.tl-org}
+
+Tutoring secondary-school pupils: lessons, revision and exercises adapted to each student.
+:::
+
+:::
+
+## Education
+
+::: {.timeline}
+
+::: {.tl-item}
+[2022 – 2026]{.tl-date}
+
+[PhD, Mechanics of solids and structures]{.tl-title}<br>
+[Université Paris-Saclay]{.tl-org}
+
+Thesis: *[Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition](https://theses.fr/2026UPAST085)*. Defended on 16 July 2026.
+:::
+
+::: {.tl-item}
+[2021 – 2022]{.tl-date}
+
+[Master 2, Computational mechanical engineering]{.tl-title}<br>
+[Université Paris-Saclay]{.tl-org}
+:::
+
+::: {.tl-item}
+[2019 – 2022]{.tl-date}
+
+[Engineering degree (Diplôme d'ingénieur)]{.tl-title}<br>
+[ISAE-Supméca, Institut supérieur de mécanique de Paris]{.tl-org}
+:::
+
+::: {.tl-item}
+[2017 – 2019]{.tl-date}
+
+[Classes préparatoires (CPGE), PCSI – PC]{.tl-title}<br>
+[Lycée Condorcet, Paris]{.tl-org}
+:::
+
+::: {.tl-item}
+[2014 – 2017]{.tl-date}
+
+[European Baccalauréat, Science]{.tl-title}<br>
+[Lycée Gabriel Guist'hau, Nantes]{.tl-org}
+:::
+
+:::
+
+## Skills & languages
+
+::: {.skill-grid}
+
+::: {}
+#### Technical
+- Python, C++
+- Finite Element Method
+- Model Order Reduction
+- Neural Networks
+:::
+
+::: {}
+#### Languages
+- French (native)
+- English (full professional, TOEIC 980/990)
+- German (A1, learning)
+- Spanish, Italian (limited working)
+:::
+
+:::

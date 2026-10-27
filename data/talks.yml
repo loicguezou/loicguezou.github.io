@@ -1,0 +1,59 @@
+# One entry per talk or poster. The listing sorts by date (newest first).
+# Fields used by _templates/talks.ejs:
+#   title, date, type, event, event-url, location, dates, authors, links [{text, icon, href}]
+
+- title: "Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition"
+  date: 2026-07-16
+  type: Defence
+  event: "PhD defence, Université Paris-Saclay"
+  dates: "16 July 2026"
+  authors: "L. Guezou"
+  links:
+    - text: Thesis
+      icon: mortarboard
+      href: https://theses.fr/2026UPAST085
+
+- title: "Dealing with the non-linearity of the material model in parametric Proper Generalized Decomposition"
+  date: 2025-11-25
+  type: Poster
+  event: "MORTech 2025"
+  event-url: https://mortech2025.i3a.es/
+  location: "Zaragoza, Spain"
+  dates: "25–29 November 2025"
+  authors: "L. Guezou, A. Barbarulo, B. Tie"
+  links:
+    - text: Poster
+      icon: easel
+      href: resources/presentations/mortech2025/mortech2025-guezou.pdf
+
+- title: "Development of high-fidelity numerical models for 3D printing of patient-specific anatomy"
+  date: 2024-06-03
+  type: Talk
+  event: "ECCOMAS Congress 2024"
+  event-url: https://eccomas2024.org/
+  location: "Lisbon, Portugal"
+  dates: "3–7 June 2024"
+  authors: "L. Guezou, A. Barbarulo, B. Tie"
+  links:
+    - text: Slides
+      icon: easel
+      href: resources/presentations/eccomas2024/eccomas2024-guezou.pdf
+    - text: Abstract
+      icon: file-earmark-text
+      href: https://hal.science/hal-04532173v1
+
+- title: "Development of high-fidelity numerical models for 3D printing of patient-specific anatomy"
+  date: 2024-05-13
+  type: Poster
+  event: "CSMA 2024"
+  event-url: https://csma2024.sciencesconf.org/
+  location: "Giens, France"
+  dates: "13–17 May 2024"
+  authors: "L. Guezou, A. Barbarulo, B. Tie"
+  links:
+    - text: Poster
+      icon: easel
+      href: resources/presentations/csma2024/csma2024-guezou.pdf
+    - text: Paper
+      icon: file-earmark-pdf
+      href: https://hal.science/hal-04490216v1/document

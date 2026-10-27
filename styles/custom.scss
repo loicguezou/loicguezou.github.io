@@ -1,0 +1,203 @@
+/*-- scss:defaults --*/
+
+$navbar-bg: #00436d;
+$navbar-fg: #ffffff;
+$navbar-hl: #ffffff;
+$footer-bg: transparent;
+$border-radius: 0.5rem;
+
+/*-- scss:rules --*/
+
+// Navbar
+.navbar {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+  .navbar-title { font-weight: 600; letter-spacing: 0.01em; }
+  .nav-link.active { text-decoration: underline; text-underline-offset: 0.45em; text-decoration-thickness: 2px; }
+}
+
+// Section headings with a thin accent rule
+h2 {
+  border-bottom: none;
+  &::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 3px;
+    margin-top: 0.35rem;
+    border-radius: 2px;
+    background: var(--bs-secondary);
+  }
+}
+
+// Home page ----------------------------------------------------------------
+.quarto-about-trestles {
+  .about-entity .about-image { border-radius: 50%; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15); }
+  .about-links .about-link { border-radius: 999px; }
+}
+
+.lead-role {
+  font-size: 1.2rem;
+  color: var(--bs-secondary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+
+  .interest {
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(var(--bs-body-color-rgb), 0.12);
+    border-left: 4px solid var(--bs-primary);
+    border-radius: 0.5rem;
+    background: rgba(var(--bs-body-color-rgb), 0.02);
+    font-weight: 600;
+    iconify-icon { color: var(--bs-secondary); margin-right: 0.35rem; vertical-align: -0.15em; }
+  }
+}
+
+.news {
+  list-style: none;
+  padding-left: 0;
+  li { padding: 0.35rem 0; border-bottom: 1px dashed rgba(var(--bs-body-color-rgb), 0.15); }
+  .news-date {
+    display: inline-block;
+    min-width: 6.5rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--bs-secondary);
+    font-weight: 600;
+  }
+}
+
+.contact-list {
+  ul { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+  iconify-icon { color: var(--bs-secondary); margin-right: 0.3rem; vertical-align: -0.15em; }
+  .contact-label {
+    margin-left: 0.35rem;
+    padding: 0.05rem 0.4rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(var(--bs-body-color-rgb), 0.25);
+    border-radius: 0.3rem;
+    opacity: 0.8;
+  }
+}
+
+// Link chips (slides, PDF, DOI...) ------------------------------------------
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.15rem 0.65rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--bs-primary);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+    &:hover { background: var(--bs-primary); color: var(--bs-body-bg); }
+  }
+}
+
+// Publication and talk cards (custom listing templates) ---------------------
+.entry-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.entry-card {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(var(--bs-body-color-rgb), 0.12);
+  border-radius: 0.75rem;
+  background: rgba(var(--bs-body-color-rgb), 0.015);
+  transition: box-shadow 0.2s, transform 0.2s;
+  &:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); transform: translateY(-1px); }
+
+  .entry-side { text-align: center; }
+  .entry-year { font-family: var(--bs-heading-font-family, serif); font-size: 1.5rem; font-weight: 600; color: var(--bs-primary); line-height: 1.1; }
+  .entry-type {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.05rem 0.45rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0.3rem;
+    background: var(--bs-secondary);
+    color: #fff;
+  }
+  .entry-title { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem; }
+  .entry-meta { font-size: 0.95rem; opacity: 0.85; }
+  .entry-venue { font-style: italic; }
+  .entry-note { font-size: 0.9rem; margin-top: 0.35rem; }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    .entry-side { text-align: left; display: flex; align-items: center; gap: 0.6rem; }
+    .entry-type { margin-top: 0; }
+  }
+}
+
+.me { font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
+
+// CV timeline ----------------------------------------------------------------
+.timeline {
+  position: relative;
+  margin: 1rem 0 2rem;
+  padding-left: 1.6rem;
+  border-left: 2px solid rgba(var(--bs-body-color-rgb), 0.15);
+
+  .tl-item {
+    position: relative;
+    padding-bottom: 1.25rem;
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.6rem - 7px);
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bs-body-bg);
+      border: 3px solid var(--bs-primary);
+    }
+    &.current::before { background: var(--bs-primary); }
+  }
+  .tl-date { font-size: 0.85rem; font-weight: 600; color: var(--bs-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+  .tl-title { font-weight: 600; font-size: 1.05rem; }
+  .tl-org { opacity: 0.85; }
+  .tl-item p { margin: 0.25rem 0 0; }
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  h4 { font-size: 1rem; margin-bottom: 0.4rem; }
+  ul { padding-left: 1.1rem; margin-bottom: 0; }
+}
+
+// Teaching ---------------------------------------------------------------------
+.teach-card {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(var(--bs-body-color-rgb), 0.12);
+  border-radius: 0.75rem;
+  img { width: 100%; border-radius: 0.5rem; }
+  h3 { margin-top: 0; }
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
