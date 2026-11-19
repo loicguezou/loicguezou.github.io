@@ -1,5 +1,6 @@
 ---
 title: "PhD thesis"
+draft: true
 subtitle: "Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition"
 description: "Summary of Loïc Guezou's PhD thesis (Université Paris-Saclay, 2026): Proper Generalised Decomposition for hyperelastic materials, applied to 3D-printed aortic aneurysm models."
 toc: true

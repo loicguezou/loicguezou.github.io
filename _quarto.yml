@@ -33,8 +33,6 @@ website:
         text: Home
       - href: publications.qmd
         text: Publications
-      - href: thesis.qmd
-        text: PhD thesis
       - href: talks.qmd
         text: Talks
       - href: teaching.qmd

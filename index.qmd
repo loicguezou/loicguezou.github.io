@@ -92,7 +92,7 @@ I completed my PhD in Computational Mechanics at [Université Paris-Saclay](http
 
 ::: {.news}
 - [Oct 2026]{.news-date} Started as a postdoctoral researcher at Helmholtz-Zentrum Hereon.
-- [Jul 2026]{.news-date} Defended my PhD at Université Paris-Saclay ([summary](thesis.qmd)).
+- [Jul 2026]{.news-date} Defended my PhD at Université Paris-Saclay ([thesis](https://theses.fr/2026UPAST085)).
 - [Nov 2025]{.news-date} Poster at [MORTech 2025](talks.qmd), Zaragoza.
 - [Jun 2024]{.news-date} Talk at [ECCOMAS 2024](talks.qmd), Lisbon.
 :::

@@ -81,7 +81,9 @@ Tutoring secondary-school pupils: lessons, revision and exercises adapted to eac
 [PhD, Mechanics of solids and structures]{.tl-title}<br>
 [Université Paris-Saclay]{.tl-org}
 
-Thesis: *[Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition](https://theses.fr/2026UPAST085)*. Defended on 16 July 2026.
+Thesis: *[Development of Hyperelastic Reduced-Order Models For Biomimetic Material Applications Using Proper Generalised Decomposition](https://theses.fr/2026UPAST085)*. Defended on 16 July 2026.<br>
+**Supervisors:** Bing Tie, Andrea Barbarulo<br>
+**Jury:** Aline Bel-Brunon (president), Pedro Díez (reviewer), Udo Nackenhorst (reviewer), Alexandre Daby-Seesaram (examiner)
 :::
 
 ::: {.tl-item}

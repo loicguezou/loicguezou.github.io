@@ -19,9 +19,10 @@ typography:
       source: google
       weight: [300, 400, 600, 700]
       style: [normal, italic]
-    - family: Lora
+    - family: Libertinus Serif
       source: google
-      weight: [400, 600]
+      weight: [400, 600, 700]
+      style: [normal, italic]
     - family: JetBrains Mono
       source: google
       weight: [400]
@@ -30,7 +31,7 @@ typography:
     weight: 400
     line-height: 1.6
   headings:
-    family: Lora
+    family: Libertinus Serif
     weight: 600
     color: mist
   monospace: JetBrains Mono
